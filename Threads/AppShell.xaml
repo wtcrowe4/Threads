@@ -68,7 +68,7 @@
             </Tab.Icon>
             <ShellContent
                 Title="Activity"
-                ContentTemplate="{DataTemplate local:MainPage}"
+                ContentTemplate="{DataTemplate pages:ActivityPage}"
                 Route="ActivityPage" />
         </Tab>
 
