@@ -8,11 +8,11 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <ContentPage.Content>
-        <Grid>
+        <Grid BackgroundColor="Black">
             <Image
                 HeightRequest="80"
                 HorizontalOptions="Center"
-                Source="threads_icon.png"
+                Source="threads_icon_darkbg_color.png"
                 VerticalOptions="Start"
                 WidthRequest="80" />
 
@@ -20,6 +20,7 @@
                 FontSize="Title"
                 HorizontalOptions="Center"
                 Text="Home Page"
+                TextColor="White"
                 VerticalOptions="Center" />
         </Grid>
     </ContentPage.Content>

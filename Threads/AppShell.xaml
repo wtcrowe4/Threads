@@ -34,8 +34,7 @@
                     FontFamily="FAS"
                     Glyph="{x:Static helpers:FontAwesomeIcons.MagnifyingGlass}"
                     Size="Medium"
-                    Color="{AppThemeBinding Dark=White,
-                                            Light=Black}" />
+                    Color="White" />
             </Tab.Icon>
             <ShellContent
                 Title="Search"
