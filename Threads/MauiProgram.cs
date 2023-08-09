@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
-using DotNet.Meteor.HotReload.Plugin;
+//using DotNet.Meteor.HotReload.Plugin;
 
 namespace Threads;
 
@@ -14,13 +14,13 @@ public static class MauiProgram
 			{
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-				fonts.AddFont("fa-brands.otf", "FAB");
-				fonts.AddFont("fa-regular.otf", "FAR");
-				fonts.AddFont("fa-solid.otf", "FAS");
+				fonts.AddFont("Font Awesome 6 Brands-Regular-400.otf", "FAB");
+				fonts.AddFont("Font Awesome 6 Free-Regular-400.otf", "FAR");
+				fonts.AddFont("Font Awesome 6 Free-Solid-900.otf", "FAS");
 			});
 
 #if DEBUG
-		builder.EnableHotReload();
+		//builder.EnableHotReload();
 		builder.Logging.AddDebug();
 		
 #endif
