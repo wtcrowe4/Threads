@@ -5,14 +5,32 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Threads"
     xmlns:pages="clr-namespace:Threads.Pages"
-    xmlns:fontAwesome="clr-namespace:Threads.Helpers.FontAwesomeIcons"
+    xmlns:helpers="clr-namespace:Threads.Helpers"
+    xmlns:controls="clr-namespace:Threads.Controls"
     Shell.FlyoutBehavior="Disabled"
     Title="Threads">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    
+    <TabBar>
+    
+        <Tab>
+            <Tab.Icon>
+                <FontImageSource
+                    FontFamily="FAS"
+                    Color="{AppThemeBinding Dark=White, Light=Black}"
+                    Glyph="{x:Static helpers:FontAwesomeIcons.House}"
+                    Size="Medium" />
+            </Tab.Icon>
+            <ShellContent
+                Title="Home"
+                ContentTemplate="{DataTemplate local:MainPage}"
+                Route="MainPage" />
+        </Tab>
+    </TabBar>
+
+    
+    
+   
 
     <ShellContent 
         Title="Search"

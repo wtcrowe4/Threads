@@ -122,6 +122,9 @@ _ReSharper*/
 *.[Rr]e[Ss]harper
 *.DotSettings.user
 
+# Meteor files
+.meteor
+
 # JustCode is a .NET coding add-in
 .JustCode
 
@@ -338,6 +341,5 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
-/MyCoffeeApp.WebAPI/Properties/ServiceDependencies/MotzCoffee - Web Deploy
 /UpgradeReport.sarif
 /upgrade-assistant.clef
