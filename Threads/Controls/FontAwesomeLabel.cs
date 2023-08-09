@@ -1,4 +1,4 @@
-namespace ThreadsApp.Controls;
+namespace Threads.Controls;
 
 public class FontAwesomeLabel : Label
 {
