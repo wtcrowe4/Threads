@@ -38,7 +38,7 @@
             </Tab.Icon>
             <ShellContent
                 Title="Search"
-                ContentTemplate="{DataTemplate local:MainPage}"
+                ContentTemplate="{DataTemplate pages:SearchPage}"
                 Route="SearchPage" />
         </Tab>
 
@@ -53,7 +53,7 @@
             </Tab.Icon>
             <ShellContent
                 Title="Thread"
-                ContentTemplate="{DataTemplate local:MainPage}"
+                ContentTemplate="{DataTemplate pages:NewThreadPage}"
                 Route="NewThreadPage" />
         </Tab>
 
