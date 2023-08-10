@@ -83,7 +83,7 @@
             </Tab.Icon>
             <ShellContent
                 Title="Profile"
-                ContentTemplate="{DataTemplate local:MainPage}"
+                ContentTemplate="{DataTemplate pages:ProfilePage}"
                 Route="ProfilePage" />
         </Tab>
 
