@@ -1,12 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace Threads.Models
 {
-    internal class Thread
+    public partial class Thread : ObservableObject
     {
+        [ObservableProperty]
+        User user;
+
+        [ObservableProperty]
+        string message;
+        
+        [ObservableProperty]
+        [NotifyPropertyChangedFor(nameof(HasLikes))]
+        int likes;
+        
+        [ObservableProperty]
+        [NotifyPropertyChangedFor(nameof(HasReplies))]
+        int replies;
+        
+        [ObservableProperty]
+        string timeAgo;
+
+        public bool HasReplies => Replies > 0;
+        public bool HasLikes => Likes > 0;
     }
+}
 }
