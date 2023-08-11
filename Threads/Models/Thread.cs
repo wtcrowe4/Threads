@@ -25,4 +25,4 @@ namespace Threads.Models
         public bool HasLikes => Likes > 0;
     }
 }
-}
+

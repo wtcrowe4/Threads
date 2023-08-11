@@ -1,12 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Humanizer;
+using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace Threads.Models
 {
-    internal class User
+    public partial class User : ObservableObject
     {
+        [ObservableProperty]
+        string userName;
+
+        [ObservableProperty]
+        string displayName;
+
+        [ObservableProperty]
+        int followers;
+
+        [ObservableProperty]
+        string image;
+
+        [ObservableProperty]
+        bool isVerified;
+
+        [ObservableProperty]
+        bool isFollowing;
+
+        [ObservableProperty]
+        bool hasSimiliarFollowers;
+
+        public string FollowersDisplay => $"{Followers.ToMetric().ToUpper()} Followers"; 
     }
 }
