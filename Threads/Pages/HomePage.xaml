@@ -8,7 +8,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <ContentPage.Content>
-        <Grid BackgroundColor="{AppThemeBinding Dark={DynamicResource BlackBrush}, Light={DynamicResource WhiteBrush}}">
+        <Grid BackgroundColor="{AppThemeBinding Dark={DynamicResource Black}, Light={DynamicResource White}}">
             <Image
                 HeightRequest="80"
                 HorizontalOptions="Center"
@@ -20,8 +20,8 @@
                 FontSize="Title"
                 HorizontalOptions="Center"
                 Text="Home Page"
-                TextColor="{AppThemeBinding Dark={DynamicResource WhiteBrush},
-                                            Light={DynamicResource BlackBrush}}"
+                TextColor="{AppThemeBinding Dark={DynamicResource White},
+                                            Light={DynamicResource Black}}"
                 VerticalOptions="Center" />
         </Grid>
     </ContentPage.Content>
