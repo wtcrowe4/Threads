@@ -13,7 +13,8 @@
                 FontSize="Title"
                 HorizontalOptions="Center"
                 Text="Search Page"
-                TextColor="White"
+                TextColor="{AppThemeBinding Dark={DynamicResource WhiteBrush},
+                                            Light={DynamicResource BlackBrush}}"
                 VerticalOptions="Center" />
         </Grid>
     </ContentPage.Content>
