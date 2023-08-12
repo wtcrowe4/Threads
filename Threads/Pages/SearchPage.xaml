@@ -8,13 +8,13 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <ContentPage.Content>
-        <Grid BackgroundColor="{AppThemeBinding Dark={DynamicResource Black}, Light={DynamicResource White}}">
+        <Grid BackgroundColor="{AppThemeBinding Dark={StaticResource Black}, Light={StaticResource White}}">
             <Label
                 FontSize="Title"
                 HorizontalOptions="Center"
                 Text="Search Page"
-                TextColor="{AppThemeBinding Dark={DynamicResource White},
-                                            Light={DynamicResource Black}}"
+                TextColor="{AppThemeBinding Dark={StaticResource White},
+                                            Light={StaticResource Black}}"
                 VerticalOptions="Center" />
         </Grid>
     </ContentPage.Content>
