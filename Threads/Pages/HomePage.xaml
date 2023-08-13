@@ -4,31 +4,30 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:helpers="clr-namespace:Threads.Helpers"
     xmlns:local="clr-namespace:Threads.Pages"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <ContentPage.Content>
         <Grid BackgroundColor="{AppThemeBinding Dark={StaticResource Black}, Light={StaticResource White}}">
 
-
             <Image
-                HeightRequest="80"
+                HeightRequest="60"
                 HorizontalOptions="Center"
                 Source="threads_icon_darkbg_color.png"
                 VerticalOptions="Start"
-                WidthRequest="80" />
-
-            <Label
+                WidthRequest="60" />
+            <!--<Label
                 FontSize="Title"
                 HorizontalOptions="Start"
                 Text="Home Page"
                 TextColor="{AppThemeBinding Dark={StaticResource White},
                                             Light={StaticResource Black}}"
-                VerticalOptions="Start" />
+                VerticalOptions="Start" />-->
 
             <ListView
                 x:Name="HomeThreadsLV"
-                Margin="5,100,5,0"
+                Margin="0,50,10,0"
                 HasUnevenRows="True"
                 VerticalOptions="FillAndExpand">
                 <ListView.ItemTemplate>
@@ -36,37 +35,91 @@
                         <ViewCell>
                             <Grid
                                 Padding="0,10"
-                                ColumnDefinitions="60,300,25,25"
-                                RowDefinitions="50,Auto,40,20">
+                                ColumnDefinitions=".12*,.50*,.05*,.05*"
+                                RowDefinitions="25,25,Auto,50,30">
                                 <Image
                                     Grid.Row="0"
+                                    Grid.RowSpan="2"
                                     Grid.Column="0"
                                     Aspect="AspectFit"
-                                    HeightRequest="50"
-                                    HorizontalOptions="Start"
+                                    HeightRequest="60"
+                                    HorizontalOptions="Center"
                                     Source="{Binding User.Image}"
-                                    VerticalOptions="Start"
-                                    WidthRequest="50" />
+                                    VerticalOptions="Center"
+                                    WidthRequest="60" />
+                                <Rectangle
+                                    Grid.Row="2"
+                                    Grid.RowSpan="2"
+                                    Grid.Column="0"
+                                    Margin="0,5,0,0"
+                                    Fill="{AppThemeBinding Dark={StaticResource Gray300},
+                                                           Light={StaticResource Gray900}}"
+                                    WidthRequest="2" />
                                 <Label
                                     Grid.Row="0"
                                     Grid.Column="1"
-                                    Text="{Binding User.UserName}" />
+                                    Text="{Binding User.UserName}"
+                                    VerticalOptions="Start" />
                                 <Label
                                     Grid.Row="1"
+                                    Grid.RowSpan="2"
                                     Grid.Column="1"
-                                    Padding="0,5,0,10"
+                                    Grid.ColumnSpan="3"
+                                    Padding="0,0,15,0"
                                     Text="{Binding Message}" />
                                 <Label
                                     Grid.Row="0"
                                     Grid.Column="2"
-                                    Text="{Binding TimeAgo}" />
+                                    Text="{Binding TimeAgo}"
+                                    VerticalOptions="Start" />
                                 <Label
                                     Grid.Row="0"
                                     Grid.Column="3"
-                                    Text="+++" />
+                                    Text="●●●"
+                                    VerticalOptions="Start" />
+
+                                <HorizontalStackLayout
+                                    Grid.Row="3"
+                                    Grid.Column="1"
+                                    Spacing="5">
+                                    <Label
+                                        FontFamily="FAR"
+                                        FontSize="20"
+                                        Text="{x:Static helpers:FontAwesomeIcons.Heart}"
+                                        TextColor="{AppThemeBinding Dark=White,
+                                                                    Light=Black}"
+                                        VerticalOptions="Center" />
+                                    <Label
+                                        FontFamily="FAR"
+                                        FontSize="20"
+                                        Text="{x:Static helpers:FontAwesomeIcons.Comment}"
+                                        TextColor="{AppThemeBinding Dark=White,
+                                                                    Light=Black}"
+                                        VerticalOptions="Center" />
+                                    <Label
+                                        FontFamily="FAS"
+                                        FontSize="20"
+                                        Text="{x:Static helpers:FontAwesomeIcons.Retweet}"
+                                        TextColor="{AppThemeBinding Dark=White,
+                                                                    Light=Black}"
+                                        VerticalOptions="Center" />
+                                    <Label
+                                        FontFamily="FAR"
+                                        FontSize="18"
+                                        Text="{x:Static helpers:FontAwesomeIcons.PaperPlane}"
+                                        TextColor="{AppThemeBinding Dark=White,
+                                                                    Light=Black}"
+                                        VerticalOptions="Center" />
+
+
+
+
+                                </HorizontalStackLayout>
+
+
                                 <Label
                                     x:Name="LikesReplies"
-                                    Grid.Row="3"
+                                    Grid.Row="4"
                                     Grid.Column="1"
                                     Text="{Binding LikesRepliesDisplay}" />
 

@@ -14,7 +14,7 @@
     <TabBar>
 
         <Tab>
-            <Tab.Icon>
+            <Tab.Icon VerticalOptions="Center">
                 <FontImageSource
                     FontFamily="FAS"
                     Glyph="{x:Static helpers:FontAwesomeIcons.House}"
@@ -29,7 +29,7 @@
         </Tab>
 
         <Tab>
-            <Tab.Icon>
+            <Tab.Icon VerticalOptions="Center">
                 <FontImageSource
                     FontFamily="FAS"
                     Glyph="{x:Static helpers:FontAwesomeIcons.MagnifyingGlass}"
@@ -43,7 +43,7 @@
         </Tab>
 
         <Tab>
-            <Tab.Icon>
+            <Tab.Icon VerticalOptions="Center">
                 <FontImageSource
                     FontFamily="FAS"
                     Glyph="{x:Static helpers:FontAwesomeIcons.PenToSquare}"
@@ -58,7 +58,7 @@
         </Tab>
 
         <Tab>
-            <Tab.Icon>
+            <Tab.Icon VerticalOptions="Center">
                 <FontImageSource
                     FontFamily="FAS"
                     Glyph="{x:Static helpers:FontAwesomeIcons.Heart}"
@@ -73,7 +73,7 @@
         </Tab>
 
         <Tab>
-            <Tab.Icon>
+            <Tab.Icon VerticalOptions="Center">
                 <FontImageSource
                     FontFamily="FAS"
                     Glyph="{x:Static helpers:FontAwesomeIcons.User}"
