@@ -28,24 +28,50 @@
 
             <ListView
                 x:Name="HomeThreadsLV"
-                Margin="20,150"
+                Margin="5,100,5,0"
                 HasUnevenRows="True"
                 VerticalOptions="FillAndExpand">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout Padding="10">
+                            <Grid
+                                Padding="0,10"
+                                ColumnDefinitions="60,300,25,25"
+                                RowDefinitions="50,Auto,40,20">
                                 <Image
-                                    HeightRequest="25"
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    Aspect="AspectFit"
+                                    HeightRequest="50"
+                                    HorizontalOptions="Start"
                                     Source="{Binding User.Image}"
-                                    WidthRequest="25" />
-                                <Label Text="{Binding User.UserName}" />
-                                <Label Text="{Binding Message}" />
-                                <Label Text="{Binding TimeAgo}" />
-                                <Label Text="{Binding Likes}" />
-                                <Label Text="{Binding Replies}" />
+                                    VerticalOptions="Start"
+                                    WidthRequest="50" />
+                                <Label
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                    Text="{Binding User.UserName}" />
+                                <Label
+                                    Grid.Row="1"
+                                    Grid.Column="1"
+                                    Padding="0,5,0,10"
+                                    Text="{Binding Message}" />
+                                <Label
+                                    Grid.Row="0"
+                                    Grid.Column="2"
+                                    Text="{Binding TimeAgo}" />
+                                <Label
+                                    Grid.Row="0"
+                                    Grid.Column="3"
+                                    Text="+++" />
+                                <Label
+                                    x:Name="LikesReplies"
+                                    Grid.Row="3"
+                                    Grid.Column="1"
+                                    Text="{Binding LikesRepliesDisplay}" />
 
-                            </StackLayout>
+                            </Grid>
+
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>

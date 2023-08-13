@@ -2,16 +2,21 @@
 using Threads.Controls;
 using Threads.Models;
 using Thread = Threads.Models.Thread;
+using System.Runtime.CompilerServices;
 
 namespace Threads.Pages;
 
+
 public partial class HomePage : ContentPage
 {
+   
     public HomePage()
     {
         InitializeComponent();
         HomeThreadsLV.ItemsSource = GetThreads();
     }
+
+    
 
     protected override void OnNavigatedTo(NavigatedToEventArgs args)
     {
@@ -27,6 +32,7 @@ public partial class HomePage : ContentPage
 
     public static List<Thread> GetThreads()
     {
+
         return new List<Thread>()
         {
             new Thread()
@@ -36,17 +42,17 @@ public partial class HomePage : ContentPage
                     UserName = "User 1",
                     DisplayName = "User 1",
                     Followers = 100,
-                    Image = "https://picsum.photos/200",
+                    Image = "default_user.png",
                     IsVerified = true,
                     IsFollowing = true,
                     HasSimiliarFollowers = true
 
                 },
-                Message = "Thread 1 content is here",
+                Message = "Thread 1 content is here. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
                 Likes = 4,
                 Replies = 2,
                 TimeAgo = "2h",
-            
+
             },
             new Thread()
             {
@@ -55,7 +61,7 @@ public partial class HomePage : ContentPage
                     UserName = "User 2",
                     DisplayName = "User 2",
                     Followers = 100,
-                    Image = "https://picsum.photos/200",
+                    Image = "default_user.png",
                     IsVerified = true,
                     IsFollowing = true,
                     HasSimiliarFollowers = true
@@ -74,7 +80,7 @@ public partial class HomePage : ContentPage
                     UserName = "User 3",
                     DisplayName = "User 3",
                     Followers = 100,
-                    Image = "https://picsum.photos/200",
+                    Image = "default_user.png",
                     IsVerified = true,
                     IsFollowing = true,
                     HasSimiliarFollowers = true
@@ -86,7 +92,7 @@ public partial class HomePage : ContentPage
                 TimeAgo = "4h",
             },
 
-            
+
             new Thread()
             {
                 User = new User()
@@ -94,7 +100,7 @@ public partial class HomePage : ContentPage
                     UserName = "User 1",
                     DisplayName = "User 1",
                     Followers = 100,
-                    Image = "https://picsum.photos/200",
+                    Image = "defualt_user.png",
                     IsVerified = true,
                     IsFollowing = true,
                     HasSimiliarFollowers = true
@@ -113,7 +119,7 @@ public partial class HomePage : ContentPage
                     UserName = "User 2",
                     DisplayName = "User 2",
                     Followers = 100,
-                    Image = "https://picsum.photos/200",
+                    Image = "default_user.png",
                     IsVerified = true,
                     IsFollowing = true,
                     HasSimiliarFollowers = true
@@ -132,7 +138,7 @@ public partial class HomePage : ContentPage
                     UserName = "User 2",
                     DisplayName = "User 2",
                     Followers = 100,
-                    Image = "https://picsum.photos/200",
+                    Image = "default_user.png",
                     IsVerified = true,
                     IsFollowing = true,
                     HasSimiliarFollowers = true
@@ -143,9 +149,8 @@ public partial class HomePage : ContentPage
                 Replies = 6,
                 TimeAgo = "6h",
 
-            },  
+            },
         };
     }
-
 }
 

@@ -4,6 +4,7 @@ namespace Threads.Models
 {
     public partial class Thread : ObservableObject
     {
+        
         [ObservableProperty]
         User user;
 
@@ -23,6 +24,8 @@ namespace Threads.Models
 
         public bool HasReplies => Replies > 0;
         public bool HasLikes => Likes > 0;
+        public string LikesRepliesDisplay => $"{Replies} Replies ✯ {Likes} Likes";
+    
     }
 }
 
