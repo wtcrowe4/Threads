@@ -12,11 +12,12 @@
         <Grid BackgroundColor="{AppThemeBinding Dark={StaticResource Black}, Light={StaticResource White}}">
 
             <Image
-                HeightRequest="60"
+                Margin="0,5"
+                HeightRequest="50"
                 HorizontalOptions="Center"
                 Source="threads_icon_darkbg_color.png"
                 VerticalOptions="Start"
-                WidthRequest="60" />
+                WidthRequest="40" />
             <!--<Label
                 FontSize="Title"
                 HorizontalOptions="Start"

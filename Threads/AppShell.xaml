@@ -8,13 +8,14 @@
     xmlns:local="clr-namespace:Threads"
     xmlns:pages="clr-namespace:Threads.Pages"
     Title="Threads"
-    Shell.FlyoutBehavior="Disabled">
+    Shell.FlyoutBehavior="Disabled"
+    Shell.NavBarIsVisible="False">
 
 
     <TabBar>
 
         <Tab>
-            <Tab.Icon VerticalOptions="Center">
+            <Tab.Icon>
                 <FontImageSource
                     FontFamily="FAS"
                     Glyph="{x:Static helpers:FontAwesomeIcons.House}"
@@ -29,7 +30,7 @@
         </Tab>
 
         <Tab>
-            <Tab.Icon VerticalOptions="Center">
+            <Tab.Icon>
                 <FontImageSource
                     FontFamily="FAS"
                     Glyph="{x:Static helpers:FontAwesomeIcons.MagnifyingGlass}"
@@ -43,7 +44,7 @@
         </Tab>
 
         <Tab>
-            <Tab.Icon VerticalOptions="Center">
+            <Tab.Icon>
                 <FontImageSource
                     FontFamily="FAS"
                     Glyph="{x:Static helpers:FontAwesomeIcons.PenToSquare}"
@@ -58,7 +59,7 @@
         </Tab>
 
         <Tab>
-            <Tab.Icon VerticalOptions="Center">
+            <Tab.Icon>
                 <FontImageSource
                     FontFamily="FAS"
                     Glyph="{x:Static helpers:FontAwesomeIcons.Heart}"
@@ -73,7 +74,7 @@
         </Tab>
 
         <Tab>
-            <Tab.Icon VerticalOptions="Center">
+            <Tab.Icon>
                 <FontImageSource
                     FontFamily="FAS"
                     Glyph="{x:Static helpers:FontAwesomeIcons.User}"
