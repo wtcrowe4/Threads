@@ -17,7 +17,7 @@
                 HorizontalOptions="Center"
                 Source="threads_icon_darkbg_color.png"
                 VerticalOptions="Start"
-                WidthRequest="40" />
+                WidthRequest="50" />
             <!--<Label
                 FontSize="Title"
                 HorizontalOptions="Start"

@@ -4,18 +4,100 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:helpers="clr-namespace:Threads.Helpers"
     xmlns:local="clr-namespace:Threads.Pages"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <ContentPage.Content>
-        <Grid BackgroundColor="{AppThemeBinding Dark={StaticResource Black}, Light={StaticResource White}}">
+        <VerticalStackLayout BackgroundColor="{AppThemeBinding Dark={StaticResource Black}, Light={StaticResource White}}">
             <Label
+                Margin="5,5"
                 FontSize="Title"
-                HorizontalOptions="Center"
-                Text="Search Page"
+                Text="Search"
                 TextColor="{AppThemeBinding Dark={StaticResource White},
-                                            Light={StaticResource Black}}"
-                VerticalOptions="Center" />
-        </Grid>
+                                            Light={StaticResource Black}}" />
+
+            <Entry
+                x:Name="SearchEntry"
+                Margin="5"
+                FontFamily="FAS"
+                FontSize="20"
+                HorizontalOptions="FillAndExpand"
+                Placeholder="{x:Static helpers:FontAwesomeIcons.MagnifyingGlass}"
+                TextChanged="SearchEntry_TextChanged"
+                VerticalOptions="Start" />
+
+            <ListView
+                x:Name="UsersLV"
+                Margin="5"
+                HasUnevenRows="True"
+                ItemsSource="{Binding Users}"
+                VerticalOptions="FillAndExpand">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Image
+                                    Grid.RowSpan="2"
+                                    Grid.Column="0"
+                                    Margin="5"
+                                    HeightRequest="50"
+                                    Source="{Binding Image}"
+                                    WidthRequest="50" />
+                                <Label
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                    Margin="5"
+                                    FontSize="Medium"
+                                    Text="{Binding UserName}"
+                                    TextColor="{AppThemeBinding Dark={StaticResource White},
+                                                                Light={StaticResource Black}}" />
+                                <Label
+                                    Grid.Row="1"
+                                    Grid.Column="1"
+                                    Margin="5"
+                                    FontSize="Small"
+                                    Text="{Binding DisplayName}"
+                                    TextColor="{AppThemeBinding Dark={StaticResource White},
+                                                                Light={StaticResource Black}}" />
+                                <Label
+                                    Grid.Row="2"
+                                    Grid.Column="1"
+                                    Margin="5"
+                                    FontSize="Small"
+                                    Text="{Binding Followers}"
+                                    TextColor="{AppThemeBinding Dark={StaticResource White},
+                                                                Light={StaticResource Black}}" />
+
+                                <Button
+                                    Grid.Row="0"
+                                    Grid.RowSpan="2"
+                                    Grid.Column="2"
+                                    Padding="10,0"
+                                    BackgroundColor="{AppThemeBinding Dark={StaticResource White},
+                                                                      Light={StaticResource Black}}"
+                                    Clicked="FollowButton_Clicked"
+                                    CommandParameter="{Binding .}"
+                                    FontSize="15"
+                                    Text="Follow"
+                                    TextColor="{AppThemeBinding Dark={StaticResource Black},
+                                                                Light={StaticResource White}}" />
+
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </VerticalStackLayout>
     </ContentPage.Content>
 </ContentPage>
