@@ -27,5 +27,6 @@ namespace Threads.Models
         bool hasSimiliarFollowers;
 
         public string FollowersDisplay => $"{Followers.ToMetric().ToUpper()} Followers"; 
+        public string IsFollowingDisplay => IsFollowing ? "Following" : "Follow";
     }
 }

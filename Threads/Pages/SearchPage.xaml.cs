@@ -12,6 +12,7 @@ namespace Threads.Pages
             InitializeComponent();
             SearchEntry.Placeholder = "\U0001F50E" + " Search";
             UsersLV.ItemsSource = GetUsers();
+            
         }
 
         protected override void OnNavigatedTo(NavigatedToEventArgs args)
@@ -37,6 +38,14 @@ namespace Threads.Pages
             }
         }
 
+        //FollowButton_Clicked
+        private void FollowButton_Clicked(object sender, EventArgs e)
+        {
+            var button = sender as Button;
+            var user = button?.BindingContext as User;
+            user.IsFollowing = !user.IsFollowing;
+        }
+
         private static List<User> GetUsers()
         {
             return new List<User>()
@@ -44,7 +53,7 @@ namespace Threads.Pages
                 new User()
                 {
                     UserName = "User 1",
-                    DisplayName = "User 1",
+                    DisplayName = "John Smith",
                     Followers = 100,
                     Image = "default_user.png",
                     IsVerified = true,
@@ -55,55 +64,55 @@ namespace Threads.Pages
                 new User()
                 {
                     UserName = "User 2",
-                    DisplayName = "User 2",
+                    DisplayName = "John Smith",
                     Followers = 100,
                     Image = "default_user.png",
                     IsVerified = true,
-                    IsFollowing = true,
+                    IsFollowing = false,
                     HasSimiliarFollowers = true
 
                 },
                 new User()
                 {
                     UserName = "User 3",
-                    DisplayName = "User 3",
+                    DisplayName = "John Smith",
                     Followers = 100,
                     Image = "default_user.png",
                     IsVerified = true,
-                    IsFollowing = true,
+                    IsFollowing = false,
                     HasSimiliarFollowers = true
 
                 },
                 new User()
                 {
                     UserName = "User 4",
-                    DisplayName = "User 4",
+                    DisplayName = "John Smith",
                     Followers = 100,
                     Image = "default_user.png",
                     IsVerified = true,
-                    IsFollowing = true,
+                    IsFollowing = false,
                     HasSimiliarFollowers = true
 
                 },
                 new User()
                 {
                     UserName = "User 5",
-                    DisplayName = "User 5",
+                    DisplayName = "John Smith",
                     Followers = 100,
                     Image = "default_user.png",
                     IsVerified = true,
-                    IsFollowing = true,
+                    IsFollowing = false,
                     HasSimiliarFollowers = true
 
                 },
                 new User()
                 {
                     UserName = "User 6",
-                    DisplayName = "User 6",
+                    DisplayName = "John Smith",
                     Followers = 100,
                     Image = "default_user.png",
                     IsVerified = true,
-                    IsFollowing = true,
+                    IsFollowing = false,
                     HasSimiliarFollowers = true
 
                 },
