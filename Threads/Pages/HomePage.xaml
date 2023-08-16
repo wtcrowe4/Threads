@@ -107,7 +107,8 @@
                                 <HorizontalStackLayout
                                     Grid.Row="3"
                                     Grid.Column="1"
-                                    Spacing="5">
+                                    Margin="0,5"
+                                    Spacing="10">
                                     <Label
                                         FontFamily="FAR"
                                         FontSize="20"
@@ -136,12 +137,7 @@
                                         TextColor="{AppThemeBinding Dark=White,
                                                                     Light=Black}"
                                         VerticalOptions="Center" />
-
-
-
-
                                 </HorizontalStackLayout>
-
 
                                 <Label
                                     x:Name="LikesReplies"

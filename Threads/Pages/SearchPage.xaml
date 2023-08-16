@@ -27,7 +27,7 @@
             <Entry
                 x:Name="SearchEntry"
                 Margin="15,5"
-                FontSize="20"
+                FontSize="16"
                 HorizontalOptions="FillAndExpand"
                 TextChanged="SearchEntry_TextChanged"
                 VerticalOptions="Start" />

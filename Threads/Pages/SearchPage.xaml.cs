@@ -2,17 +2,20 @@
 using Threads.Controls;
 using Threads.Models;
 
+
 namespace Threads.Pages
 {
     public partial class SearchPage : ContentPage
     {
-        private readonly string _searchPlaceholder = "Search";
+        
+        private readonly string _searchPlaceholder = "\U0001F50E" + "   Search";
         public SearchPage()
         {
             InitializeComponent();
-            SearchEntry.Placeholder = "\U0001F50E" + " Search";
-            UsersLV.ItemsSource = GetUsers();
             
+            SearchEntry.Placeholder = _searchPlaceholder;
+            UsersLV.ItemsSource = GetUsers();
+            //\U0001F50E
         }
 
         protected override void OnNavigatedTo(NavigatedToEventArgs args)
