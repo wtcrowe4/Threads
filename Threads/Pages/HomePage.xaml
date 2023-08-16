@@ -36,7 +36,7 @@
                         <ViewCell>
                             <Grid
                                 Padding="0,10"
-                                ColumnDefinitions=".12*,.50*,.05*,.05*"
+                                ColumnDefinitions="70,*,25,25"
                                 RowDefinitions="25,25,Auto,50,30">
                                 <Image
                                     Grid.Row="0"
@@ -75,11 +75,15 @@
                                         VerticalOptions="Center"
                                         WidthRequest="20" />
                                 </HorizontalStackLayout>
-                                <Label
-                                    Grid.Row="0"
-                                    Grid.Column="1"
-                                    Text="{Binding User.UserName}"
-                                    VerticalOptions="Start" />
+
+                                <HorizontalStackLayout Grid.Row="0" Grid.Column="1">
+                                    <Label Text="{Binding User.UserName}" VerticalOptions="Start" />
+                                    <Label
+                                        Margin="5,2,0,0"
+                                        FontFamily="FAS"
+                                        Text="{Binding User.IsVerifiedDisplay}" />
+                                </HorizontalStackLayout>
+
                                 <Label
                                     Grid.Row="1"
                                     Grid.RowSpan="2"

@@ -62,7 +62,7 @@ public partial class HomePage : ContentPage
                     DisplayName = "User 2",
                     Followers = 100,
                     Image = "default_user.png",
-                    IsVerified = true,
+                    IsVerified = false,
                     IsFollowing = true,
                     HasSimiliarFollowers = true
 
@@ -120,7 +120,7 @@ public partial class HomePage : ContentPage
                     DisplayName = "User 2",
                     Followers = 100,
                     Image = "default_user.png",
-                    IsVerified = true,
+                    IsVerified = false,
                     IsFollowing = true,
                     HasSimiliarFollowers = true
 
@@ -135,8 +135,8 @@ public partial class HomePage : ContentPage
             {
                 User = new User()
                 {
-                    UserName = "User 2",
-                    DisplayName = "User 2",
+                    UserName = "User 3",
+                    DisplayName = "User 3",
                     Followers = 100,
                     Image = "default_user.png",
                     IsVerified = true,

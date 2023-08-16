@@ -1,5 +1,6 @@
 ﻿using Humanizer;
 using CommunityToolkit.Mvvm.ComponentModel;
+using Threads.Helpers;
 
 namespace Threads.Models
 {
@@ -28,5 +29,6 @@ namespace Threads.Models
 
         public string FollowersDisplay => $"{Followers.ToMetric().ToUpper()} Followers"; 
         public string IsFollowingDisplay => IsFollowing ? "Following" : "Follow";
+        public string IsVerifiedDisplay => IsVerified ? FontAwesomeIcons.CircleCheck : string.Empty;
     }
 }

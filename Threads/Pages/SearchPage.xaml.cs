@@ -67,7 +67,7 @@ namespace Threads.Pages
                     DisplayName = "John Smith",
                     Followers = 100,
                     Image = "default_user.png",
-                    IsVerified = true,
+                    IsVerified = false,
                     IsFollowing = false,
                     HasSimiliarFollowers = true
 
@@ -111,7 +111,7 @@ namespace Threads.Pages
                     DisplayName = "John Smith",
                     Followers = 100,
                     Image = "default_user.png",
-                    IsVerified = true,
+                    IsVerified = false,
                     IsFollowing = false,
                     HasSimiliarFollowers = true
 

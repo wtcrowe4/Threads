@@ -58,23 +58,35 @@
                                     HeightRequest="50"
                                     Source="{Binding Image}"
                                     WidthRequest="50" />
-                                <Label
-                                    Grid.Row="0"
-                                    Grid.Column="1"
-                                    FontSize="Small"
-                                    Text="{Binding UserName}"
-                                    TextColor="{AppThemeBinding Dark={StaticResource White},
-                                                                Light={StaticResource Black}}"
-                                    VerticalOptions="End" />
+                                <HorizontalStackLayout Grid.Row="0" Grid.Column="1">
+                                    <Label
+                                        Grid.Row="0"
+                                        Grid.Column="1"
+                                        FontSize="Small"
+                                        Text="{Binding UserName}"
+                                        TextColor="{AppThemeBinding Dark={StaticResource White},
+                                                                    Light={StaticResource Black}}"
+                                        VerticalOptions="End" />
+                                    <Label
+                                        Margin="5,0,0,2"
+                                        FontFamily="FAS"
+                                        Text="{Binding IsVerifiedDisplay}"
+                                        VerticalOptions="End" />
+                                </HorizontalStackLayout>
+
                                 <Label
                                     Grid.Row="1"
                                     Grid.Column="1"
                                     FontSize="Small"
                                     Text="{Binding DisplayName}"
                                     TextColor="{AppThemeBinding Dark={StaticResource White},
-                                                                Light={StaticResource Black}}" />
+                                                                Light={StaticResource Black}}"
+                                    VerticalOptions="Center" />
 
-                                <HorizontalStackLayout Grid.Row="2" Grid.Column="1">
+                                <HorizontalStackLayout
+                                    Grid.Row="2"
+                                    Grid.Column="1"
+                                    Padding="0,5,0,0">
                                     <Image
                                         HeightRequest="25"
                                         Source="{Binding Image}"
@@ -91,7 +103,8 @@
                                         FontSize="Small"
                                         Text="{Binding FollowersDisplay}"
                                         TextColor="{AppThemeBinding Dark={StaticResource White},
-                                                                    Light={StaticResource Black}}" />
+                                                                    Light={StaticResource Black}}"
+                                        VerticalOptions="End" />
                                 </HorizontalStackLayout>
 
                                 <Button
