@@ -1,4 +1,4 @@
-﻿using System.Windows.Input;
+﻿using System.Diagnostics;
 using Threads.Models;
 
 namespace Threads.Pages
@@ -13,6 +13,7 @@ namespace Threads.Pages
             CurrentUserImage.Source = currentUser.Image;
             CurrentUserName.Text = currentUser.UserName;
 
+            
             
 
         }
@@ -32,9 +33,33 @@ namespace Threads.Pages
             };
         }
 
-        public ICommand GoBackCommand => new Command(async () => await Navigation.PopAsync());
+        //method for tapped gobackcommand event
+        async void GoBackTapped(object sender, TappedEventArgs args)
+        {
+            Debug.WriteLine("GoBack");
+            await Navigation.PopAsync();
+           
+        }
+
+        public Command AttachCommand => new(() => Attach());
+    
+    
+        public Command PostCommand => new(() => Post());
+    
+    
+        public void Attach()
+        {
+            Debug.WriteLine("Attach");
+        }
+
+        public void Post()
+        {
+            Debug.WriteLine("Post");
+        }
+
     }
        
+
 
     
 }

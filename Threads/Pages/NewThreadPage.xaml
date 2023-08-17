@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8" ?>
 <ContentPage
     x:Class="Threads.Pages.NewThreadPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -7,6 +6,7 @@
     xmlns:helpers="clr-namespace:Threads.Helpers"
     xmlns:local="clr-namespace:Threads.Pages"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Shell.TabBarIsVisible="True"
     mc:Ignorable="d">
     <ContentPage.Content>
 
@@ -32,7 +32,7 @@
                 VerticalOptions="Center">
 
                 <Label.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding GoBackCommand}" />
+                    <TapGestureRecognizer Tapped="GoBackTapped" />
                 </Label.GestureRecognizers>
 
             </Label>
@@ -55,8 +55,8 @@
                 StrokeThickness="1"
                 X1="0"
                 X2="500"
-                Y1="12"
-                Y2="12" />
+                Y1="10"
+                Y2="10" />
 
             <Image
                 x:Name="CurrentUserImage"
@@ -67,12 +67,57 @@
                 VerticalOptions="Start"
                 WidthRequest="60" />
 
-            <Label
-                x:Name="CurrentUserName"
+            <Rectangle
+                Grid.Row="1"
+                Grid.Column="0"
+                Margin="0,75,0,600"
+                Fill="{AppThemeBinding Dark={StaticResource Gray800},
+                                       Light={StaticResource Gray300}}"
+                WidthRequest="2" />
+
+
+
+            <VerticalStackLayout
                 Grid.Row="1"
                 Grid.Column="1"
-                Margin="2,25"
-                VerticalOptions="Start" />
+                Margin="2,25">
+
+                <Label x:Name="CurrentUserName" Margin="2,0" />
+
+                <Entry
+                    x:Name="ContentEntry"
+                    Margin="2,10,10,0"
+                    Placeholder="Start a thread..."
+                    Text="{Binding Content}"
+                    TextColor="{AppThemeBinding Dark={StaticResource White},
+                                                Light={StaticResource Black}}" />
+
+                <Label
+                    Margin="5,15"
+                    FontFamily="FAS"
+                    FontSize="22"
+                    Text="{x:Static helpers:FontAwesomeIcons.Paperclip}"
+                    TextColor="{AppThemeBinding Dark={StaticResource Gray400},
+                                                Light={StaticResource Gray400}}">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding AttachCommand}" />
+                    </Label.GestureRecognizers>
+                </Label>
+
+                <Label
+                    Margin="2,0"
+                    Text="Add to Thread"
+                    TextColor="{AppThemeBinding Dark={StaticResource Gray400},
+                                                Light={StaticResource Gray400}}" />
+
+
+
+
+            </VerticalStackLayout>
+
+
+
+
 
 
 
