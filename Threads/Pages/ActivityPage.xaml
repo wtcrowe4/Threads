@@ -35,10 +35,10 @@
                 Grid.Row="1"
                 Grid.Column="0"
                 Grid.ColumnSpan="3">
-                <Button Text="All" />
-                <Button Text="Requests" />
-                <Button Text="Replies" />
-                <Button Text="Mentions" />
+                <Button Margin="5,0" Text="All" />
+                <Button Margin="5,0" Text="Requests" />
+                <Button Margin="5,0" Text="Replies" />
+                <Button Margin="5,0" Text="Mentions" />
             </HorizontalStackLayout>
 
             <ListView
@@ -46,6 +46,7 @@
                 Grid.Row="2"
                 Grid.Column="0"
                 Grid.ColumnSpan="3"
+                Margin="0,10,0,0"
                 HasUnevenRows="True"
                 ItemsSource="{Binding SelectedTab}"
                 RowHeight="100">
