@@ -9,13 +9,115 @@
     mc:Ignorable="d">
     <ContentPage.Content>
         <Grid BackgroundColor="{AppThemeBinding Dark={StaticResource Black}, Light={StaticResource White}}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="60" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
             <Label
+                Grid.Row="0"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                Margin="5,5,0,10"
                 FontSize="Title"
-                HorizontalOptions="Center"
-                Text="Activity Page"
+                HorizontalOptions="Start"
+                Text="Activity"
                 TextColor="{AppThemeBinding Dark={StaticResource White},
                                             Light={StaticResource Black}}"
-                VerticalOptions="Center" />
+                VerticalOptions="Start" />
+
+            <HorizontalStackLayout
+                Grid.Row="1"
+                Grid.Column="0"
+                Grid.ColumnSpan="3">
+                <Button Text="All" />
+                <Button Text="Requests" />
+                <Button Text="Replies" />
+                <Button Text="Mentions" />
+            </HorizontalStackLayout>
+
+            <ListView
+                x:Name="ActivityListView"
+                Grid.Row="2"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                HasUnevenRows="True"
+                ItemsSource="{Binding SelectedTab}"
+                RowHeight="100">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="60" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Image
+                                    Grid.RowSpan="2"
+                                    Grid.Column="0"
+                                    HeightRequest="50"
+                                    Source="{Binding Image}"
+                                    WidthRequest="50" />
+                                <HorizontalStackLayout
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                    Margin="0,5">
+                                    <Label
+                                        Grid.Row="0"
+                                        Grid.Column="1"
+                                        FontSize="Small"
+                                        Text="{Binding UserName}"
+                                        TextColor="{AppThemeBinding Dark={StaticResource White},
+                                                                    Light={StaticResource Black}}"
+                                        VerticalOptions="End" />
+                                    <Label
+                                        Margin="5,0,0,2"
+                                        FontFamily="FAS"
+                                        Text="{Binding IsVerifiedDisplay}"
+                                        VerticalOptions="End" />
+                                </HorizontalStackLayout>
+
+
+                                <Label
+                                    Grid.Row="1"
+                                    Grid.Column="1"
+                                    Margin="0,0,0,20"
+                                    FontSize="Small"
+                                    Text="{Binding DisplayName}"
+                                    TextColor="{AppThemeBinding Dark={StaticResource White},
+                                                                Light={StaticResource Black}}"
+                                    VerticalOptions="Center" />
+
+
+
+                                <Button
+                                    x:Name="FollowBtn"
+                                    Grid.Row="0"
+                                    Grid.RowSpan="2"
+                                    Grid.Column="2"
+                                    Margin="0,15,0,15"
+                                    Clicked="FollowButton_Clicked"
+                                    CommandParameter="{Binding .}"
+                                    Text="{Binding IsFollowingDisplay}" />
+
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
         </Grid>
     </ContentPage.Content>
 </ContentPage>
