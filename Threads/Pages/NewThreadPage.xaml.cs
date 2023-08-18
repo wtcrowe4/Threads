@@ -11,6 +11,7 @@ namespace Threads.Pages
             InitializeComponent();
             currentUser = GetCurrentUser();
             CurrentUserImage.Source = currentUser.Image;
+            CurrentUserImageSmall.Source = currentUser.Image;
             CurrentUserName.Text = currentUser.UserName;
 
             
@@ -34,11 +35,11 @@ namespace Threads.Pages
         }
 
         //method for tapped gobackcommand event
-        async void GoBackTapped(object sender, TappedEventArgs args)
+        static void GoBackTapped(object sender, TappedEventArgs args)
         {
             Debug.WriteLine("GoBack");
-            await Navigation.PopAsync();
-           
+            
+            Application.Current.MainPage = new AppShell();
         }
 
         public Command AttachCommand => new(() => Attach());

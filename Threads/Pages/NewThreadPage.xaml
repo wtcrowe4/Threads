@@ -6,7 +6,7 @@
     xmlns:helpers="clr-namespace:Threads.Helpers"
     xmlns:local="clr-namespace:Threads.Pages"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Shell.TabBarIsVisible="True"
+    Shell.TabBarIsVisible="False"
     mc:Ignorable="d">
     <ContentPage.Content>
 
@@ -75,6 +75,14 @@
                                        Light={StaticResource Gray300}}"
                 WidthRequest="2" />
 
+            <Image
+                x:Name="CurrentUserImageSmall"
+                Grid.Row="1"
+                Grid.Column="0"
+                Margin="0,-280,0,0"
+                HeightRequest="20"
+                WidthRequest="20" />
+
 
 
             <VerticalStackLayout
@@ -116,6 +124,34 @@
             </VerticalStackLayout>
 
 
+
+
+
+            <Label
+                Grid.Row="2"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Margin="15,-5"
+                HorizontalOptions="StartAndExpand"
+                Text="Your followers can reply"
+                TextColor="{AppThemeBinding Dark={StaticResource Gray300},
+                                            Light={StaticResource Gray600}}" />
+
+            <Label
+                Grid.Row="2"
+                Grid.Column="1"
+                Grid.ColumnSpan="1"
+                Margin="20,-5"
+                FontSize="18"
+                HorizontalOptions="EndAndExpand"
+                HorizontalTextAlignment="End"
+                Text="Post"
+                TextColor="{AppThemeBinding Dark={StaticResource Gray400},
+                                            Light={StaticResource Gray400}}">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding PostCommand}" />
+                </Label.GestureRecognizers>
+            </Label>
 
 
 
