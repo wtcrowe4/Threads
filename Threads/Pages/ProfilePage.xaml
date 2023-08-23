@@ -4,18 +4,59 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:helpers="clr-namespace:Threads.Helpers"
     xmlns:local="clr-namespace:Threads.Pages"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <ContentPage.Content>
         <Grid BackgroundColor="{AppThemeBinding Dark={StaticResource Black}, Light={StaticResource White}}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70" />
+                <RowDefinition Height="100" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
             <Label
+                Grid.Row="0"
+                Margin="15,10"
+                FontFamily="FAS"
+                FontSize="30"
+                HorizontalOptions="Start"
+                Text="{x:Static helpers:FontAwesomeIcons.Lock}"
+                TextColor="{AppThemeBinding Dark={StaticResource White},
+                                            Light={StaticResource Black}}" />
+
+            <Label
+                Grid.Row="0"
+                Margin="15,10,60,10"
+                FontFamily="FAB"
+                FontSize="36"
+                HorizontalOptions="End"
+                Text="{x:Static helpers:FontAwesomeIcons.Instagram}"
+                TextColor="{AppThemeBinding Dark={StaticResource White},
+                                            Light={StaticResource Black}}" />
+
+            <Label
+                Grid.Row="0"
+                Margin="15,13"
+                FontFamily="FAS"
+                FontSize="30"
+                HorizontalOptions="End"
+                Text="{x:Static helpers:FontAwesomeIcons.Bars}"
+                TextColor="{AppThemeBinding Dark={StaticResource White},
+                                            Light={StaticResource Black}}" />
+
+
+
+            <Label
+                Grid.Row="1"
+                Margin="10,0"
                 FontSize="Title"
-                HorizontalOptions="Center"
-                Text="Profile Page"
+                HorizontalOptions="Start"
+                Text="Current User"
                 TextColor="{AppThemeBinding Dark={StaticResource White},
                                             Light={StaticResource Black}}"
-                VerticalOptions="Center" />
+                VerticalOptions="Start" />
         </Grid>
     </ContentPage.Content>
 </ContentPage>
