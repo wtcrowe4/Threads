@@ -12,7 +12,7 @@
         <Grid BackgroundColor="{AppThemeBinding Dark={StaticResource Black}, Light={StaticResource White}}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="50" />
-                <RowDefinition Height="150" />
+                <RowDefinition Height="200" />
                 <RowDefinition Height="50" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
@@ -85,9 +85,25 @@
                 VerticalOptions="Start"
                 WidthRequest="100" />
 
-            <Button Grid.Row="2" />
+            <Button
+                Grid.Row="2"
+                Margin="10,0"
+                HeightRequest="35"
+                HorizontalOptions="Start"
+                Text="Edit Profile"
+                VerticalOptions="Start"
+                WidthRequest="220" />
 
-            <Button Grid.Row="2" />
+            <Button
+                Grid.Row="2"
+                Margin="10,0"
+                HeightRequest="35"
+                HorizontalOptions="End"
+                Text="Share Profile"
+                VerticalOptions="Start"
+                WidthRequest="220" />
+
+
 
         </Grid>
     </ContentPage.Content>
