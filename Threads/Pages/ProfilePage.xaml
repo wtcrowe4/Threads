@@ -11,8 +11,9 @@
     <ContentPage.Content>
         <Grid BackgroundColor="{AppThemeBinding Dark={StaticResource Black}, Light={StaticResource White}}">
             <Grid.RowDefinitions>
-                <RowDefinition Height="70" />
-                <RowDefinition Height="100" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="150" />
+                <RowDefinition Height="50" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
@@ -20,7 +21,7 @@
                 Grid.Row="0"
                 Margin="15,10"
                 FontFamily="FAS"
-                FontSize="30"
+                FontSize="25"
                 HorizontalOptions="Start"
                 Text="{x:Static helpers:FontAwesomeIcons.Lock}"
                 TextColor="{AppThemeBinding Dark={StaticResource White},
@@ -30,7 +31,7 @@
                 Grid.Row="0"
                 Margin="15,10,60,10"
                 FontFamily="FAB"
-                FontSize="36"
+                FontSize="30"
                 HorizontalOptions="End"
                 Text="{x:Static helpers:FontAwesomeIcons.Instagram}"
                 TextColor="{AppThemeBinding Dark={StaticResource White},
@@ -40,23 +41,54 @@
                 Grid.Row="0"
                 Margin="15,13"
                 FontFamily="FAS"
-                FontSize="30"
+                FontSize="25"
                 HorizontalOptions="End"
                 Text="{x:Static helpers:FontAwesomeIcons.Bars}"
                 TextColor="{AppThemeBinding Dark={StaticResource White},
                                             Light={StaticResource Black}}" />
 
 
-
             <Label
+                x:Name="CurrentUserDisplay"
                 Grid.Row="1"
-                Margin="10,0"
-                FontSize="Title"
+                Margin="10,25"
+                FontSize="25"
                 HorizontalOptions="Start"
                 Text="Current User"
                 TextColor="{AppThemeBinding Dark={StaticResource White},
-                                            Light={StaticResource Black}}"
-                VerticalOptions="Start" />
+                                            Light={StaticResource Black}}" />
+
+            <Label
+                x:Name="CurrentUserUN"
+                Grid.Row="1"
+                Margin="10,60"
+                FontSize="15"
+                HorizontalOptions="Start"
+                TextColor="{AppThemeBinding Dark={StaticResource White},
+                                            Light={StaticResource Black}}" />
+
+            <Label
+                x:Name="FollowersDisplay"
+                Grid.Row="1"
+                Margin="10,90"
+                FontSize="15"
+                HorizontalOptions="Start"
+                TextColor="{AppThemeBinding Dark={StaticResource White},
+                                            Light={StaticResource Black}}" />
+
+            <Image
+                x:Name="CurrentUserImage"
+                Grid.Row="1"
+                Margin="10,0"
+                HeightRequest="100"
+                HorizontalOptions="End"
+                VerticalOptions="Start"
+                WidthRequest="100" />
+
+            <Button Grid.Row="2" />
+
+            <Button Grid.Row="2" />
+
         </Grid>
     </ContentPage.Content>
 </ContentPage>
