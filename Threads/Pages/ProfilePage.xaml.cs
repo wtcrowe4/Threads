@@ -1,4 +1,6 @@
-﻿using Threads.Models;
+﻿using System.Diagnostics;
+using System.Xml.Serialization;
+using Threads.Models;
 
 namespace Threads.Pages
 {
@@ -31,6 +33,21 @@ namespace Threads.Pages
                 IsFollowing = false,
                 HasSimiliarFollowers = true
             };
+        }
+
+        private void ThreadsSelected(object sender, EventArgs e)
+        {
+            Debug.WriteLine("Threads Selected");
+        }
+
+        private void RepliesSelected(object sender, EventArgs e)
+        {
+            Debug.WriteLine("Replies Selected");
+        }
+
+        private void RepostsSelected(object sender, EventArgs e)
+        {
+            Debug.WriteLine("Reposts Selected");
         }
 
     }
