@@ -5,7 +5,7 @@ namespace Threads.Pages
 
     public partial class ProfilePage : ContentPage
     {
-        private User _currentUser;
+        private readonly User _currentUser;
         public ProfilePage()
         {
             InitializeComponent();
@@ -14,7 +14,8 @@ namespace Threads.Pages
             CurrentUserImage.Source = _currentUser.Image;
             CurrentUserUN.Text = _currentUser.UserName;
             FollowersDisplay.Text = _currentUser.FollowersDisplay;
-
+            FollowersImage.Source = _currentUser.Image;
+            FollowersImage2.Source = _currentUser.Image;
         }
 
 

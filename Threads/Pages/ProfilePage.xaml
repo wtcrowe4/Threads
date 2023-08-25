@@ -67,14 +67,28 @@
                 TextColor="{AppThemeBinding Dark={StaticResource White},
                                             Light={StaticResource Black}}" />
 
-            <Label
-                x:Name="FollowersDisplay"
-                Grid.Row="1"
-                Margin="10,90"
-                FontSize="15"
-                HorizontalOptions="Start"
-                TextColor="{AppThemeBinding Dark={StaticResource White},
-                                            Light={StaticResource Black}}" />
+
+            <HorizontalStackLayout Grid.Row="1" Margin="10,90">
+
+                <Image
+                    x:Name="FollowersImage"
+                    HeightRequest="25"
+                    HorizontalOptions="Start"
+                    WidthRequest="25" />
+                <Image
+                    x:Name="FollowersImage2"
+                    Margin="-10,0,0,0"
+                    HeightRequest="25"
+                    HorizontalOptions="Start"
+                    WidthRequest="25" />
+                <Label
+                    x:Name="FollowersDisplay"
+                    FontSize="15"
+                    HorizontalOptions="Start"
+                    TextColor="{AppThemeBinding Dark={StaticResource White},
+                                                Light={StaticResource Black}}" />
+
+            </HorizontalStackLayout>
 
             <Image
                 x:Name="CurrentUserImage"
