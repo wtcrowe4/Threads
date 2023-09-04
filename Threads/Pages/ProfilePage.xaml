@@ -125,17 +125,19 @@
                 VerticalOptions="Start">
 
                 <Label
+                    x:Name="ThreadsLabel"
                     FontSize="15"
                     HorizontalOptions="Start"
                     Text="Threads"
-                    TextColor="{AppThemeBinding Dark={StaticResource White},
-                                                Light={StaticResource Black}}">
+                    TextColor="{AppThemeBinding Dark={StaticResource Gray900},
+                                                Light={StaticResource Gray300}}">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Tapped="ThreadsSelected" />
                     </Label.GestureRecognizers>
                 </Label>
 
                 <Label
+                    x:Name="RepliesLabel"
                     Margin="100,0"
                     FontSize="15"
                     HorizontalOptions="Center"
@@ -148,6 +150,7 @@
                 </Label>
 
                 <Label
+                    x:Name="RepostsLabel"
                     FontSize="15"
                     HorizontalOptions="End"
                     Text="Reposts"
@@ -161,15 +164,17 @@
             </HorizontalStackLayout>
 
             <Rectangle
+                x:Name="UnderlineThreads"
                 Grid.Row="3"
                 Margin="0,40"
-                Fill="{AppThemeBinding Dark={StaticResource Gray200},
-                                       Light={StaticResource Gray900}}"
+                Fill="{AppThemeBinding Dark={StaticResource Gray600},
+                                       Light={StaticResource Gray200}}"
                 HeightRequest="2"
                 HorizontalOptions="StartAndExpand"
                 VerticalOptions="End"
                 WidthRequest="160" />
             <Rectangle
+                x:Name="UnderlineReplies"
                 Grid.Row="3"
                 Margin="0,40"
                 Fill="{AppThemeBinding Dark={StaticResource Gray600},
@@ -179,6 +184,7 @@
                 VerticalOptions="End"
                 WidthRequest="160" />
             <Rectangle
+                x:Name="UnderlineReposts"
                 Grid.Row="3"
                 Margin="0,40"
                 Fill="{AppThemeBinding Dark={StaticResource Gray600},
@@ -189,7 +195,7 @@
                 WidthRequest="160" />
             <!--  WidthRequest="{Binding Source={x:Reference Screen}, Path=Width, Converter={StaticResource PercentConverter}, ConverterParameter=0.33}"  -->
 
-            <ListView Grid.Row="4">
+            <ListView x:Name="ActivityLV" Grid.Row="4">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
