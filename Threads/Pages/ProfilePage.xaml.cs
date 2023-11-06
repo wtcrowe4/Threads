@@ -1,5 +1,4 @@
-﻿using CallKit;
-using CommunityToolkit.Maui.Converters;
+﻿using CommunityToolkit.Maui.Converters;
 using System.Diagnostics;
 using System.Xml.Serialization;
 using Threads.Models;
@@ -48,6 +47,12 @@ namespace Threads.Pages
             Debug.WriteLine("Threads Selected");
             ThreadsLabel.TextColor = Color.FromArgb("#1DA1F2");
             UnderlineThreads.BackgroundColor = Color.FromArgb("#1DA1F2");
+            //undo other selections
+            RepliesLabel.TextColor = Color.FromArgb("#657786");
+            UnderlineReplies.BackgroundColor = Color.FromArgb("#657786");
+            RepostsLabel.TextColor = Color.FromArgb("#657786");
+            UnderlineReposts.BackgroundColor = Color.FromArgb("#657786");
+
 
             //Get Threads
             //Dummy Data
@@ -87,6 +92,11 @@ namespace Threads.Pages
             Debug.WriteLine("Replies Selected");
             RepliesLabel.TextColor = Color.FromArgb("#1DA1F2");
             UnderlineReplies.BackgroundColor = Color.FromArgb("#1DA1F2");
+            //undo other selections
+            ThreadsLabel.TextColor = Color.FromArgb("#657786");
+            UnderlineThreads.BackgroundColor = Color.FromArgb("#657786");
+            RepostsLabel.TextColor = Color.FromArgb("#657786");
+            UnderlineReposts.BackgroundColor = Color.FromArgb("#657786");
 
             //Get Replies
 
@@ -97,6 +107,11 @@ namespace Threads.Pages
             Debug.WriteLine("Reposts Selected");
             RepostsLabel.TextColor = Color.FromArgb("#1DA1F2");
             UnderlineReposts.BackgroundColor = Color.FromArgb("#1DA1F2");
+            //undo other selections
+            ThreadsLabel.TextColor = Color.FromArgb("#657786");
+            UnderlineThreads.BackgroundColor = Color.FromArgb("#657786");
+            RepliesLabel.TextColor = Color.FromArgb("#657786");
+            UnderlineReplies.BackgroundColor = Color.FromArgb("#657786");
 
             //Get Reposts
 
