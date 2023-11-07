@@ -9,11 +9,14 @@ using Threads.Models;
 namespace Threads.Pages
 {
 
+
     public partial class ProfilePage : ContentPage
     {
         private readonly User _currentUser;
         private List<Models.Activity> _activity;
         private List<Models.Thread> _threads;
+        private List<Models.Activity> _replies; 
+        private List<Models.Activity> _reposts; 
         public ProfilePage()
         {
             InitializeComponent();
@@ -24,7 +27,7 @@ namespace Threads.Pages
             FollowersDisplay.Text = _currentUser.FollowersDisplay;
             FollowersImage.Source = _currentUser.Image;
             FollowersImage2.Source = _currentUser.Image;
-            ActivityLV.ItemsSource =  _threads;
+            ActivityLV.ItemsSource = _threads;
         }
 
 
@@ -53,38 +56,40 @@ namespace Threads.Pages
             RepostsLabel.TextColor = Color.FromArgb("#657786");
             UnderlineReposts.BackgroundColor = Color.FromArgb("#657786");
 
-
             //Get Threads
+            ActivityLV.ItemsSource = _threads;
+
+
             //Dummy Data
             _threads = new List<Models.Thread>
-             {
-                new Models.Thread
-                {
-                   User = _currentUser,
-                   Message = "This is a test message",
-                   Likes = 10,
-                   Replies = 5,
-                   TimeAgo = "1h"
+                         {
+                            new Models.Thread
+                            {
+                               User = _currentUser,
+                               Message = "This is a test message",
+                               Likes = 10,
+                               Replies = 5,
+                               TimeAgo = "1h"
 
-                },
-                new Models.Thread
-                {
-                   User = _currentUser,
-                   Message = "This is a test message",
-                   Likes = 10,
-                   Replies = 5,
-                   TimeAgo = "2h"
+                            },
+                            new Models.Thread
+                            {
+                               User = _currentUser,
+                               Message = "This is a test message",
+                               Likes = 10,
+                               Replies = 5,
+                               TimeAgo = "2h"
 
-                },
-                new Models.Thread
-                {
-                   User = _currentUser,
-                   Message = "This is a test message",
-                   Likes = 10,
-                   Replies = 5,
-                   TimeAgo = "4h"
-                }
-             };
+                            },
+                            new Models.Thread
+                            {
+                               User = _currentUser,
+                               Message = "This is a test message",
+                               Likes = 10,
+                               Replies = 5,
+                               TimeAgo = "4h"
+                            }
+                         };
         }
 
         private void RepliesSelected(object sender, EventArgs e)
@@ -99,6 +104,34 @@ namespace Threads.Pages
             UnderlineReposts.BackgroundColor = Color.FromArgb("#657786");
 
             //Get Replies
+            _replies = new List<Models.Activity> // Modified this line to initialize _replies list
+                        {
+                            new Models.Activity
+                            {
+                                Icon = "reply.png",
+                                Action = Models.Activity.ActionType.Reply,
+                                UserAct = new Models.User{UserName = "ME864", Image = "default_user.png"},
+                                UserRec = _currentUser,
+                                Message = "This is a test message",
+                            },
+                            new Models.Activity
+                            {
+                                Icon = "reply.png",
+                                Action = Models.Activity.ActionType.Reply,
+                                UserAct = new Models.User{UserName = "ME864", Image = "default_user.png"},
+                                UserRec = _currentUser,
+                                Message = "This is a test message",
+                            },
+                            new Models.Activity
+                            {
+                                Icon = "reply.png",
+                                Action = Models.Activity.ActionType.Reply,
+                                UserAct = new Models.User{UserName = "ME864", Image = "default_user.png"},
+                                UserRec = _currentUser,
+                                Message = "This is a test message",
+                            }
+                        };
+            ActivityLV.ItemsSource = _replies; // Modified this line to set the ItemsSource to _replies list
 
         }
 
@@ -114,6 +147,34 @@ namespace Threads.Pages
             UnderlineReplies.BackgroundColor = Color.FromArgb("#657786");
 
             //Get Reposts
+            _reposts = new List<Models.Activity> // Modified this line to initialize _reposts list
+                        {
+                            new Models.Activity
+                            {
+                               Icon = "repost.png",
+                               Action = Models.Activity.ActionType.Repost,
+                               UserAct = new Models.User{UserName = "ME864", Image = "default_user.png"},
+                               UserRec = _currentUser,
+                               Thread = new Models.Thread{Message = "This is a test message"},
+                            },
+                            new Models.Activity
+                            {
+                               Icon = "repost.png",
+                               Action = Models.Activity.ActionType.Repost,
+                               UserAct = new Models.User{UserName = "ME864", Image = "default_user.png"},
+                               UserRec = _currentUser,
+                               Thread = new Models.Thread{Message = "This is a test message"},
+                            },
+                            new Models.Activity
+                            {
+                               Icon = "repost.png",
+                               Action = Models.Activity.ActionType.Repost,
+                               UserAct = new Models.User{UserName = "ME864", Image = "default_user.png"},
+                               UserRec = _currentUser,
+                               Thread = new Models.Thread{Message = "This is a test message"},
+                            }
+                        };
+            ActivityLV.ItemsSource = _reposts; // Modified this line to set the ItemsSource to _reposts list
 
         }
 
