@@ -56,9 +56,11 @@ namespace Threads.Pages
             RepostsLabel.TextColor = Color.FromArgb("#657786");
             UnderlineReposts.BackgroundColor = Color.FromArgb("#657786");
 
-            //Get Threads
+            //Populate LV
             ActivityLV.ItemsSource = _threads;
 
+            //Get Threads
+            //activity threads
 
             //Dummy Data
             _threads = new List<Models.Thread>
@@ -131,8 +133,10 @@ namespace Threads.Pages
                                 Message = "This is a test message",
                             }
                         };
-            ActivityLV.ItemsSource = _replies; // Modified this line to set the ItemsSource to _replies list
+            //populate LV
+            ActivityLV.ItemsSource = _replies; 
 
+            //get activities where action = reply
         }
 
         private void RepostsSelected(object sender, EventArgs e)
@@ -147,7 +151,8 @@ namespace Threads.Pages
             UnderlineReplies.BackgroundColor = Color.FromArgb("#657786");
 
             //Get Reposts
-            _reposts = new List<Models.Activity> // Modified this line to initialize _reposts list
+            //get activities where action = repost
+            _reposts = new List<Models.Activity> 
                         {
                             new Models.Activity
                             {
@@ -174,7 +179,8 @@ namespace Threads.Pages
                                Thread = new Models.Thread{Message = "This is a test message"},
                             }
                         };
-            ActivityLV.ItemsSource = _reposts; // Modified this line to set the ItemsSource to _reposts list
+            //populate LV
+            ActivityLV.ItemsSource = _reposts; 
 
         }
 
