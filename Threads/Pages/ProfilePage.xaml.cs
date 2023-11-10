@@ -27,6 +27,9 @@ namespace Threads.Pages
             FollowersDisplay.Text = _currentUser.FollowersDisplay;
             FollowersImage.Source = _currentUser.Image;
             FollowersImage2.Source = _currentUser.Image;
+            //initally threads selected
+            ThreadsLabel.TextColor = Color.FromArgb("#1DA1F2");
+            UnderlineThreads.BackgroundColor = Color.FromArgb("#1DA1F2");
             ActivityLV.ItemsSource = _threads;
         }
 
