@@ -17,6 +17,7 @@ namespace Threads.Pages
         private List<Models.Thread> _threads;
         private List<Models.Activity> _replies; 
         private List<Models.Activity> _reposts; 
+
         public ProfilePage()
         {
             InitializeComponent();
@@ -30,6 +31,35 @@ namespace Threads.Pages
             //initally threads selected
             ThreadsLabel.TextColor = Color.FromArgb("#1DA1F2");
             UnderlineThreads.BackgroundColor = Color.FromArgb("#1DA1F2");
+            _threads = new List<Models.Thread>
+                         {
+                            new Models.Thread
+                            {
+                               User = _currentUser,
+                               Message = "This is a test message",
+                               Likes = 10,
+                               Replies = 5,
+                               TimeAgo = "1h"
+
+                            },
+                            new Models.Thread
+                            {
+                               User = _currentUser,
+                               Message = "This is a test message",
+                               Likes = 10,
+                               Replies = 5,
+                               TimeAgo = "2h"
+
+                            },
+                            new Models.Thread
+                            {
+                               User = _currentUser,
+                               Message = "This is a test message",
+                               Likes = 10,
+                               Replies = 5,
+                               TimeAgo = "4h"
+                            }
+            };
             ActivityLV.ItemsSource = _threads;
         }
 
