@@ -147,6 +147,22 @@ namespace Threads.Pages
                                Likes = 10,
                                Replies = 5,
                                TimeAgo = "4h"
+                            },
+                            new Models.Thread
+                            {
+                               User = _currentUser,
+                               Message = "This is a test message",
+                               Likes = 10,
+                               Replies = 5,
+                               TimeAgo = "4h"
+                            },
+                            new Models.Thread
+                            {
+                               User = _currentUser,
+                               Message = "This is a test message",
+                               Likes = 10,
+                               Replies = 5,
+                               TimeAgo = "6h"
                             }
                          };
         }
