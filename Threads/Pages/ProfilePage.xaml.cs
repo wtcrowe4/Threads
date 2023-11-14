@@ -204,6 +204,22 @@ namespace Threads.Pages
                                 UserAct = new Models.User{UserName = "ME864", Image = "default_user.png"},
                                 UserRec = _currentUser,
                                 Message = "This is a test message",
+                            },
+                            new Models.Activity
+                            {
+                                Icon = "reply.png",
+                                Action = Models.Activity.ActionType.Reply,
+                                UserAct = new Models.User{UserName = "ME864", Image = "default_user.png"},
+                                UserRec = _currentUser,
+                                Message = "This is a test message",
+                            },
+                            new Models.Activity
+                            {
+                                Icon = "reply.png",
+                                Action = Models.Activity.ActionType.Reply,
+                                UserAct = new Models.User{UserName = "ME864", Image = "default_user.png"},
+                                UserRec = _currentUser,
+                                Message = "This is a test message",
                             }
                         };
             //populate LV
@@ -227,6 +243,22 @@ namespace Threads.Pages
             //get activities where action = repost
             _reposts = new List<Models.Activity> 
                         {
+                            new Models.Activity
+                            {
+                               Icon = "repost.png",
+                               Action = Models.Activity.ActionType.Repost,
+                               UserAct = new Models.User{UserName = "ME864", Image = "default_user.png"},
+                               UserRec = _currentUser,
+                               Thread = new Models.Thread{Message = "This is a test message"},
+                            },
+                            new Models.Activity
+                            {
+                               Icon = "repost.png",
+                               Action = Models.Activity.ActionType.Repost,
+                               UserAct = new Models.User{UserName = "ME864", Image = "default_user.png"},
+                               UserRec = _currentUser,
+                               Thread = new Models.Thread{Message = "This is a test message"},
+                            },
                             new Models.Activity
                             {
                                Icon = "repost.png",
