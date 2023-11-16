@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,8 +8,9 @@ using Threads.Models;
 
 namespace Threads.Models
 {
-    public class Activity
+    public partial class Activity : ObservableObject
     {
+
         public string Icon { get; set; }
         public enum ActionType
         {
@@ -18,11 +20,18 @@ namespace Threads.Models
             Like,
             Mention
         }
-        public ActionType Action { get; set; } 
+        
+        public ActionType Action { get; set; }
+        [ObservableProperty]
         public string Message { get; set; }
+        
+        [ObservableProperty]
         public Thread Thread { get; set; }
+        [ObservableProperty]
         public User UserAct { get; set; }
+        [ObservableProperty]
         public User UserRec { get; set; }
+        [ObservableProperty]
         public string TimeAgo { get; set; }
     }
 }
