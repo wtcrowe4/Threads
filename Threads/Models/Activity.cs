@@ -20,18 +20,20 @@ namespace Threads.Models
             Like,
             Mention
         }
-        
+
+        //[ObservableProperty]
         public ActionType Action { get; set; }
-        [ObservableProperty]
+
+        //[ObservableProperty]
         public string Message { get; set; }
-        
-        [ObservableProperty]
+
+        //[ObservableProperty]
         public Thread Thread { get; set; }
-        [ObservableProperty]
+        //[ObservableProperty]
         public User UserAct { get; set; }
-        [ObservableProperty]
+        //[ObservableProperty]
         public User UserRec { get; set; }
-        [ObservableProperty]
+        //[ObservableProperty]
         public string TimeAgo { get; set; }
     }
 }
