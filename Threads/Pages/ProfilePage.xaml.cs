@@ -183,7 +183,7 @@ namespace Threads.Pages
                         {
                             new Models.Activity
                             {
-                                Icon = "reply.png",
+                                //Icon = "reply.png",
                                 Action = Models.Activity.ActionType.Reply,
                                 UserAct = new Models.User{UserName = "ME864", Image = "default_user.png"},
                                 UserRec = _currentUser,
@@ -191,7 +191,7 @@ namespace Threads.Pages
                             },
                             new Models.Activity
                             {
-                                Icon = "reply.png",
+                                //Icon = "reply.png",
                                 Action = Models.Activity.ActionType.Reply,
                                 UserAct = new Models.User{UserName = "ME864", Image = "default_user.png"},
                                 UserRec = _currentUser,
@@ -199,7 +199,7 @@ namespace Threads.Pages
                             },
                             new Models.Activity
                             {
-                                Icon = "reply.png",
+                                //Icon = "reply.png",
                                 Action = Models.Activity.ActionType.Reply,
                                 UserAct = new Models.User{UserName = "ME864", Image = "default_user.png"},
                                 UserRec = _currentUser,
@@ -207,7 +207,7 @@ namespace Threads.Pages
                             },
                             new Models.Activity
                             {
-                                Icon = "reply.png",
+                                //Icon = "reply.png",
                                 Action = Models.Activity.ActionType.Reply,
                                 UserAct = new Models.User{UserName = "ME864", Image = "default_user.png"},
                                 UserRec = _currentUser,
@@ -215,7 +215,7 @@ namespace Threads.Pages
                             },
                             new Models.Activity
                             {
-                                Icon = "reply.png",
+                                //Icon = "reply.png",
                                 Action = Models.Activity.ActionType.Reply,
                                 UserAct = new Models.User{UserName = "ME864", Image = "default_user.png"},
                                 UserRec = _currentUser,
@@ -245,7 +245,7 @@ namespace Threads.Pages
                         {
                             new Models.Activity
                             {
-                               Icon = "repost.png",
+                               //Icon = "repost.png",
                                Action = Models.Activity.ActionType.Repost,
                                UserAct = new Models.User{UserName = "ME864", Image = "default_user.png"},
                                UserRec = _currentUser,
@@ -253,7 +253,7 @@ namespace Threads.Pages
                             },
                             new Models.Activity
                             {
-                               Icon = "repost.png",
+                               //Icon = "repost.png",
                                Action = Models.Activity.ActionType.Repost,
                                UserAct = new Models.User{UserName = "ME864", Image = "default_user.png"},
                                UserRec = _currentUser,
@@ -261,7 +261,7 @@ namespace Threads.Pages
                             },
                             new Models.Activity
                             {
-                               Icon = "repost.png",
+                               //Icon = "repost.png",
                                Action = Models.Activity.ActionType.Repost,
                                UserAct = new Models.User{UserName = "ME864", Image = "default_user.png"},
                                UserRec = _currentUser,
@@ -269,7 +269,7 @@ namespace Threads.Pages
                             },
                             new Models.Activity
                             {
-                               Icon = "repost.png",
+                               //Icon = "repost.png",
                                Action = Models.Activity.ActionType.Repost,
                                UserAct = new Models.User{UserName = "ME864", Image = "default_user.png"},
                                UserRec = _currentUser,
@@ -277,7 +277,7 @@ namespace Threads.Pages
                             },
                             new Models.Activity
                             {
-                               Icon = "repost.png",
+                               //Icon = "repost.png",
                                Action = Models.Activity.ActionType.Repost,
                                UserAct = new Models.User{UserName = "ME864", Image = "default_user.png"},
                                UserRec = _currentUser,
