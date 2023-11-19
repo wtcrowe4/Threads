@@ -1,19 +1,14 @@
 ﻿using CommunityToolkit.Maui.Converters;
 using System.Diagnostics;
-using System.Xml.Serialization;
 using Threads.Models;
-
-
-
 
 namespace Threads.Pages
 {
-
-
+    
     public partial class ProfilePage : ContentPage
     {
         private readonly User _currentUser;
-        private List<Models.Activity> _activity;
+        //private List<Models.Activity> _activity;
         private List<Models.Thread> _threads;
         private List<Models.Activity> _replies; 
         private List<Models.Activity> _reposts; 
@@ -31,8 +26,8 @@ namespace Threads.Pages
             //initally threads selected
             ThreadsLabel.TextColor = Color.FromArgb("#1DA1F2");
             UnderlineThreads.BackgroundColor = Color.FromArgb("#1DA1F2");
-            _threads = new List<Models.Thread>
-                         {
+            _threads =
+                         [
                             new Models.Thread
                             {
                                User = _currentUser,
@@ -83,7 +78,7 @@ namespace Threads.Pages
                                Replies = 5,
                                TimeAgo = "4h"
                             },
-            };
+            ];
             ActivityLV.ItemsSource = _threads;
         }
 
@@ -120,8 +115,8 @@ namespace Threads.Pages
             //activity threads
 
             //Dummy Data
-            _threads = new List<Models.Thread>
-                         {
+            _threads =
+                         [
                             new Models.Thread
                             {
                                User = _currentUser,
@@ -164,7 +159,7 @@ namespace Threads.Pages
                                Replies = 5,
                                TimeAgo = "6h"
                             }
-                         };
+                         ];
         }
 
         private void RepliesSelected(object sender, EventArgs e)
@@ -179,8 +174,9 @@ namespace Threads.Pages
             UnderlineReposts.BackgroundColor = Color.FromArgb("#657786");
 
             //Get Replies
-            _replies = new List<Models.Activity> // Modified this line to initialize _replies list
-                        {
+            _replies =
+                        // Modified this line to initialize _replies list
+                        [
                             new Models.Activity
                             {
                                 //Icon = "reply.png",
@@ -221,7 +217,7 @@ namespace Threads.Pages
                                 UserRec = _currentUser,
                                 Message = "This is a test message",
                             }
-                        };
+                        ];
             //populate LV
             ActivityLV.ItemsSource = _replies; 
 
@@ -241,10 +237,9 @@ namespace Threads.Pages
 
             //Get Reposts
             //get activities where action = repost
-            _reposts = new List<Models.Activity> 
-                        {
-                            new Models.Activity
-                            {
+            _reposts =
+                        [
+                            new() {
                                //Icon = "repost.png",
                                Action = Models.Activity.ActionType.Repost,
                                UserAct = new Models.User{UserName = "ME864", Image = "default_user.png"},
@@ -283,7 +278,7 @@ namespace Threads.Pages
                                UserRec = _currentUser,
                                Thread = new Models.Thread{Message = "This is a test message"},
                             }
-                        };
+                        ];
             //populate LV
             ActivityLV.ItemsSource = _reposts; 
 
