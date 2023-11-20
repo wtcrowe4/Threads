@@ -66,17 +66,17 @@ namespace Threads.Pages
                             {
                                User = _currentUser,
                                Message = "This is a test message",
-                               Likes = 10,
-                               Replies = 5,
-                               TimeAgo = "4h"
+                               Likes = 20,
+                               Replies = 3,
+                               TimeAgo = "5h"
                             },
                             new Models.Thread
                             {
                                User = _currentUser,
                                Message = "This is a test message",
-                               Likes = 10,
+                               Likes = 15,
                                Replies = 5,
-                               TimeAgo = "4h"
+                               TimeAgo = "6h"
                             },
             ];
             ActivityLV.ItemsSource = _threads;
