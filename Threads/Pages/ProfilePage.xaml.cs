@@ -147,16 +147,16 @@ namespace Threads.Pages
                             {
                                User = _currentUser,
                                Message = "This is a test message",
-                               Likes = 10,
-                               Replies = 5,
-                               TimeAgo = "4h"
+                               Likes = 20,
+                               Replies = 7,
+                               TimeAgo = "5h"
                             },
                             new Models.Thread
                             {
                                User = _currentUser,
                                Message = "This is a test message",
-                               Likes = 10,
-                               Replies = 5,
+                               Likes = 25,
+                               Replies = 12,
                                TimeAgo = "6h"
                             }
                          ];
