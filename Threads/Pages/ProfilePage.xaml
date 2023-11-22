@@ -200,38 +200,64 @@
                     <DataTemplate>
                         <ViewCell>
                             <VerticalStackLayout>
-                                <HorizontalStackLayout>
-                                    <Label
-                                        FontSize="20"
-                                        Text="Icon"
-                                        TextColor="{AppThemeBinding Dark={StaticResource White},
-                                                                    Light={StaticResource Black}}" />
-                                    <Label
-                                        FontSize="20"
-                                        Text="UserRec"
-                                        TextColor="{AppThemeBinding Dark={StaticResource White},
-                                                                    Light={StaticResource Black}}" />
-                                    <Label
-                                        FontSize="20"
-                                        Text="UserAct"
-                                        TextColor="{AppThemeBinding Dark={StaticResource White},
-                                                                    Light={StaticResource Black}}" />
-                                    <!--  add a link to the thread  -->
-                                    <Label
-                                        FontSize="20"
-                                        Text="Thread"
-                                        TextColor="{AppThemeBinding Dark={StaticResource White},
-                                                                    Light={StaticResource Black}}">
-                                        <Label.GestureRecognizers>
-                                            <TapGestureRecognizer Command="{Binding ThreadCommand}" />
-                                        </Label.GestureRecognizers>
-                                    </Label>
-                                    <Label
-                                        FontSize="20"
-                                        Text="TimeAgo"
-                                        TextColor="{AppThemeBinding Dark={StaticResource White},
-                                                                    Light={StaticResource Black}}" />
-                                </HorizontalStackLayout>
+                                <if condition="{Binding IsThreadsListView}">
+                                    <HorizontalStackLayout>
+                                        <!--<Label
+                                            FontSize="20"
+                                            Text="Icon"
+                                            TextColor="{AppThemeBinding Dark={StaticResource White},
+                                                                        Light={StaticResource Black}}" />-->
+                                        <Label
+                                            FontSize="20"
+                                            Text="User"
+                                            TextColor="{AppThemeBinding Dark={StaticResource White},
+                                                                        Light={StaticResource Black}}" />
+                                        <Label
+                                            FontSize="20"
+                                            Text="Thread"
+                                            TextColor="{AppThemeBinding Dark={StaticResource White},
+                                                                        Light={StaticResource Black}}" />
+                                        <Label
+                                            FontSize="20"
+                                            Text="TimeAgo"
+                                            TextColor="{AppThemeBinding Dark={StaticResource White},
+                                                                        Light={StaticResource Black}}" />
+                                    </HorizontalStackLayout>
+                                </if>
+                                <else>
+                                    <HorizontalStackLayout>
+                                        <!--<Label
+                                            FontSize="20"
+                                            Text="Icon"
+                                            TextColor="{AppThemeBinding Dark={StaticResource White},
+                                                                        Light={StaticResource Black}}" />-->
+                                        <Label
+                                            FontSize="20"
+                                            Text="UserRec"
+                                            TextColor="{AppThemeBinding Dark={StaticResource White},
+                                                                        Light={StaticResource Black}}" />
+                                        <Label
+                                            FontSize="20"
+                                            Text="UserAct"
+                                            TextColor="{AppThemeBinding Dark={StaticResource White},
+                                                                        Light={StaticResource Black}}" />
+                                        <!--  add a link to the thread  -->
+                                        <Label
+                                            FontSize="20"
+                                            Text="Thread"
+                                            TextColor="{AppThemeBinding Dark={StaticResource White},
+                                                                        Light={StaticResource Black}}">
+                                            <Label.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{Binding ThreadCommand}" />
+                                            </Label.GestureRecognizers>
+                                        </Label>
+                                        <Label
+                                            FontSize="20"
+                                            Text="TimeAgo"
+                                            TextColor="{AppThemeBinding Dark={StaticResource White},
+                                                                        Light={StaticResource Black}}" />
+                                    </HorizontalStackLayout>
+                                </else>
                             </VerticalStackLayout>
                         </ViewCell>
                     </DataTemplate>
