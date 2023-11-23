@@ -9,7 +9,7 @@ namespace Threads.Pages
     {
         private readonly User _currentUser;
         //private List<Models.Activity> _activity;
-        private List<Models.Thread> _threads;
+        private List<Models.Activity> _threads;
         private List<Models.Activity> _replies; 
         private List<Models.Activity> _reposts; 
 
@@ -27,58 +27,128 @@ namespace Threads.Pages
             ThreadsLabel.TextColor = Color.FromArgb("#1DA1F2");
             UnderlineThreads.BackgroundColor = Color.FromArgb("#1DA1F2");
             _threads =
-                         [
-                            new Models.Thread
-                            {
-                               User = _currentUser,
-                               Message = "This is a test message",
-                               Likes = 10,
-                               Replies = 5,
-                               TimeAgo = "1h"
+                [
+                    new Models.Activity
+                    {
+                        Icon = "reply.png",
+                        Action = Models.Activity.ActionType.Reply,
+                        UserAct = new Models.User { UserName = "ME864", Image = "default_user.png" },
+                        UserRec = _currentUser,
+                        Message = "This is a test message",
+                        Thread = new Models.Thread
+                        {
+                            User = _currentUser,
+                            Message = "This is a test message",
+                            Likes = 10,
+                            Replies = 5,
+                            TimeAgo = "1h"
+                        }
 
-                            },
-                            new Models.Thread
-                            {
-                               User = _currentUser,
-                               Message = "This is a test message",
-                               Likes = 10,
-                               Replies = 5,
-                               TimeAgo = "2h"
+                    },
+                    new Models.Activity
+                    {
+                        Icon = "reply.png",
+                        Action = Models.Activity.ActionType.Reply,
+                        UserAct = new Models.User { UserName = "ME864", Image = "default_user.png" },
+                        UserRec = _currentUser,
+                        Message = "This is a test message",
+                        Thread = new Models.Thread
+                        {
+                            User = _currentUser,
+                            Message = "This is a test message",
+                            Likes = 10,
+                            Replies = 5,
+                            TimeAgo = "2h"
+                        }
 
-                            },
-                            new Models.Thread
-                            {
-                               User = _currentUser,
-                               Message = "This is a test message",
-                               Likes = 10,
-                               Replies = 5,
-                               TimeAgo = "4h"
-                            },
-                            new Models.Thread
-                            {
-                               User = _currentUser,
-                               Message = "This is a test message",
-                               Likes = 10,
-                               Replies = 5,
-                               TimeAgo = "4h"
-                            },
-                            new Models.Thread
-                            {
-                               User = _currentUser,
-                               Message = "This is a test message",
-                               Likes = 20,
-                               Replies = 3,
-                               TimeAgo = "5h"
-                            },
-                            new Models.Thread
-                            {
-                               User = _currentUser,
-                               Message = "This is a test message",
-                               Likes = 15,
-                               Replies = 5,
-                               TimeAgo = "6h"
-                            },
-            ];
+                    },
+                    new Models.Activity
+                    {
+                        Icon = "reply.png",
+                        Action = Models.Activity.ActionType.Reply,
+                        UserAct = new Models.User { UserName = "ME864", Image = "default_user.png" },
+                        UserRec = _currentUser,
+                        Message = "This is a test message",
+                        Thread = new Models.Thread
+                        {
+                            User = _currentUser,
+                            Message = "This is a test message",
+                            Likes = 10,
+                            Replies = 5,
+                            TimeAgo = "4h"
+                        }
+
+                    },
+                    new Models.Activity
+                    {
+                        Icon = "reply.png",
+                        Action = Models.Activity.ActionType.Reply,
+                        UserAct = new Models.User { UserName = "ME864", Image = "default_user.png" },
+                        UserRec = _currentUser,
+                        Message = "This is a test message",
+                        Thread = new Models.Thread
+                        {
+                            User = _currentUser,
+                            Message = "This is a test message",
+                            Likes = 20,
+                            Replies = 7,
+                            TimeAgo = "5h"
+                        }
+
+                    },
+                ];
+            //             [
+            //                new Models.Thread
+            //                {
+            //                   User = _currentUser,
+            //                   Message = "This is a test message",
+            //                   Likes = 10,
+            //                   Replies = 5,
+            //                   TimeAgo = "1h"
+
+            //                },
+            //                new Models.Thread
+            //                {
+            //                   User = _currentUser,
+            //                   Message = "This is a test message",
+            //                   Likes = 10,
+            //                   Replies = 5,
+            //                   TimeAgo = "2h"
+
+            //                },
+            //                new Models.Thread
+            //                {
+            //                   User = _currentUser,
+            //                   Message = "This is a test message",
+            //                   Likes = 10,
+            //                   Replies = 5,
+            //                   TimeAgo = "4h"
+            //                },
+            //                new Models.Thread
+            //                {
+            //                   User = _currentUser,
+            //                   Message = "This is a test message",
+            //                   Likes = 10,
+            //                   Replies = 5,
+            //                   TimeAgo = "4h"
+            //                },
+            //                new Models.Thread
+            //                {
+            //                   User = _currentUser,
+            //                   Message = "This is a test message",
+            //                   Likes = 20,
+            //                   Replies = 3,
+            //                   TimeAgo = "5h"
+            //                },
+            //                new Models.Thread
+            //                {
+            //                   User = _currentUser,
+            //                   Message = "This is a test message",
+            //                   Likes = 15,
+            //                   Replies = 5,
+            //                   TimeAgo = "6h"
+            //                },
+            //];
             ActivityLV.ItemsSource = _threads;
         }
 
@@ -116,50 +186,120 @@ namespace Threads.Pages
 
             //Dummy Data
             _threads =
-                         [
-                            new Models.Thread
-                            {
-                               User = _currentUser,
-                               Message = "This is a test message",
-                               Likes = 10,
-                               Replies = 5,
-                               TimeAgo = "1h"
+                [
+                    new Models.Activity
+                    {
+                        Icon = "reply.png",
+                        Action = Models.Activity.ActionType.Reply,
+                        UserAct = new Models.User { UserName = "ME864", Image = "default_user.png" },
+                        UserRec = _currentUser,
+                        Message = "This is a test message",
+                        Thread = new Models.Thread
+                        {
+                            User = _currentUser,
+                            Message = "This is a test message",
+                            Likes = 10,
+                            Replies = 5,
+                            TimeAgo = "1h"
+                        }
 
-                            },
-                            new Models.Thread
-                            {
-                               User = _currentUser,
-                               Message = "This is a test message",
-                               Likes = 10,
-                               Replies = 5,
-                               TimeAgo = "2h"
+                    },
+                    new Models.Activity
+                    {
+                        Icon = "reply.png",
+                        Action = Models.Activity.ActionType.Reply,
+                        UserAct = new Models.User { UserName = "ME864", Image = "default_user.png" },
+                        UserRec = _currentUser,
+                        Message = "This is a test message",
+                        Thread = new Models.Thread
+                        {
+                            User = _currentUser,
+                            Message = "This is a test message",
+                            Likes = 10,
+                            Replies = 5,
+                            TimeAgo = "2h"
+                        }
 
-                            },
-                            new Models.Thread
-                            {
-                               User = _currentUser,
-                               Message = "This is a test message",
-                               Likes = 10,
-                               Replies = 5,
-                               TimeAgo = "4h"
-                            },
-                            new Models.Thread
-                            {
-                               User = _currentUser,
-                               Message = "This is a test message",
-                               Likes = 20,
-                               Replies = 7,
-                               TimeAgo = "5h"
-                            },
-                            new Models.Thread
-                            {
-                               User = _currentUser,
-                               Message = "This is a test message",
-                               Likes = 25,
-                               Replies = 12,
-                               TimeAgo = "6h"
-                            }
-                         ];
+                    },
+                    new Models.Activity
+                    {
+                        Icon = "reply.png",
+                        Action = Models.Activity.ActionType.Reply,
+                        UserAct = new Models.User { UserName = "ME864", Image = "default_user.png" },
+                        UserRec = _currentUser,
+                        Message = "This is a test message",
+                        Thread = new Models.Thread
+                        {
+                            User = _currentUser,
+                            Message = "This is a test message",
+                            Likes = 10,
+                            Replies = 5,
+                            TimeAgo = "4h"
+                        }
+
+                    },
+                    new Models.Activity
+                    {
+                        Icon = "reply.png",
+                        Action = Models.Activity.ActionType.Reply,
+                        UserAct = new Models.User { UserName = "ME864", Image = "default_user.png" },
+                        UserRec = _currentUser,
+                        Message = "This is a test message",
+                        Thread = new Models.Thread
+                        {
+                            User = _currentUser,
+                            Message = "This is a test message",
+                            Likes = 20,
+                            Replies = 7,
+                            TimeAgo = "5h"
+                        }
+
+                    },
+                ];
+            //[
+            //   new Models.Thread
+            //   {
+            //      User = _currentUser,
+            //      Message = "This is a test message",
+            //      Likes = 10,
+            //      Replies = 5,
+            //      TimeAgo = "1h"
+
+            //   },
+            //   new Models.Thread
+            //   {
+            //      User = _currentUser,
+            //      Message = "This is a test message",
+            //      Likes = 10,
+            //      Replies = 5,
+            //      TimeAgo = "2h"
+
+            //   },
+            //   new Models.Thread
+            //   {
+            //      User = _currentUser,
+            //      Message = "This is a test message",
+            //      Likes = 10,
+            //      Replies = 5,
+            //      TimeAgo = "4h"
+            //   },
+            //   new Models.Thread
+            //   {
+            //      User = _currentUser,
+            //      Message = "This is a test message",
+            //      Likes = 20,
+            //      Replies = 7,
+            //      TimeAgo = "5h"
+            //   },
+            //   new Models.Thread
+            //   {
+            //      User = _currentUser,
+            //      Message = "This is a test message",
+            //      Likes = 25,
+            //      Replies = 12,
+            //      TimeAgo = "6h"
+            //   }
+            //];
         }
 
         private void RepliesSelected(object sender, EventArgs e)
