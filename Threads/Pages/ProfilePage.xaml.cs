@@ -424,6 +424,16 @@ namespace Threads.Pages
 
         }
 
+        //Thread Command to link to thread page
+        private void ThreadCommand(object sender, EventArgs e)
+        {
+            Debug.WriteLine("Thread Command");
+            //Navigate to thread page
+            Navigation.PushAsync(new ThreadPage());
+
+
+        }
+
     }
 
 }
