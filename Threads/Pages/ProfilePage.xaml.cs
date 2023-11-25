@@ -384,7 +384,14 @@ namespace Threads.Pages
                                Action = Models.Activity.ActionType.Repost,
                                UserAct = new Models.User{UserName = "ME864", Image = "default_user.png"},
                                UserRec = _currentUser,
-                               Thread = new Models.Thread{Message = "This is a test message"},
+                               Thread = new Models.Thread
+                               {
+                                   User = _currentUser,
+                                   Message = "This is a test message",
+                                   Likes = 20,
+                                   Replies = 7,
+                                   TimeAgo = "5h"
+                               }
                             },
                             new Models.Activity
                             {
@@ -392,7 +399,14 @@ namespace Threads.Pages
                                Action = Models.Activity.ActionType.Repost,
                                UserAct = new Models.User{UserName = "ME864", Image = "default_user.png"},
                                UserRec = _currentUser,
-                               Thread = new Models.Thread{Message = "This is a test message"},
+                               Thread = new Models.Thread
+                               {
+                                   User = _currentUser,
+                                   Message = "This is a test message",
+                                   Likes = 20,
+                                   Replies = 7,
+                                   TimeAgo = "5h"
+                               }
                             },
                             new Models.Activity
                             {
@@ -400,7 +414,14 @@ namespace Threads.Pages
                                Action = Models.Activity.ActionType.Repost,
                                UserAct = new Models.User{UserName = "ME864", Image = "default_user.png"},
                                UserRec = _currentUser,
-                               Thread = new Models.Thread{Message = "This is a test message"},
+                               Thread = new Models.Thread
+                               {
+                                   User = _currentUser,
+                                   Message = "This is a test message",
+                                   Likes = 20,
+                                   Replies = 7,
+                                   TimeAgo = "5h"
+                               }
                             },
                             new Models.Activity
                             {
@@ -408,7 +429,14 @@ namespace Threads.Pages
                                Action = Models.Activity.ActionType.Repost,
                                UserAct = new Models.User{UserName = "ME864", Image = "default_user.png"},
                                UserRec = _currentUser,
-                               Thread = new Models.Thread{Message = "This is a test message"},
+                               Thread = new Models.Thread
+                               {
+                                   User = _currentUser,
+                                   Message = "This is a test message",
+                                   Likes = 20,
+                                   Replies = 7,
+                                   TimeAgo = "5h"
+                               }
                             },
                             new Models.Activity
                             {
@@ -416,7 +444,14 @@ namespace Threads.Pages
                                Action = Models.Activity.ActionType.Repost,
                                UserAct = new Models.User{UserName = "ME864", Image = "default_user.png"},
                                UserRec = _currentUser,
-                               Thread = new Models.Thread{Message = "This is a test message"},
+                               Thread = new Models.Thread
+                               {
+                                   User = _currentUser,
+                                   Message = "This is a test message",
+                                   Likes = 20,
+                                   Replies = 7,
+                                   TimeAgo = "5h"
+                               }
                             }
                         ];
             //populate LV
