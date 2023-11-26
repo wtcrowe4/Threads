@@ -9,5 +9,14 @@
             HorizontalOptions="Center"
             Text="Single Thread Page"
             VerticalOptions="Center" />
+
+        <Button Clicked="OnStartThread" Text="Start Thread" />
+
+        <Button Clicked="OnStopThread" Text="Stop Thread" />
+
+        <Button Clicked="OnStartTask" Text="Start Task" />
+
+        <Button Clicked="OnStopTask" Text="Stop Task" />
+
     </VerticalStackLayout>
 </ContentPage>
