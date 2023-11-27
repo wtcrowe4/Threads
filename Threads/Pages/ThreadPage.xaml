@@ -5,18 +5,31 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="ThreadPage">
     <VerticalStackLayout>
+        <HorizontalStackLayout>
+            <Image Source="back_arrow.png">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding BackCommand}" NumberOfTapsRequired="1" />
+                </Image.GestureRecognizers>
+            </Image>
+            <Label
+                HorizontalOptions="CenterAndExpand"
+                Text="Thread Page"
+                VerticalOptions="CenterAndExpand" />
+
+            <Image Source="AlertBell.png">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding AlertCommand}" NumberOfTapsRequired="1" />
+                </Image.GestureRecognizers>
+
+            </Image>
+        </HorizontalStackLayout>
+
         <Label
             HorizontalOptions="Center"
             Text="Single Thread Page"
             VerticalOptions="Center" />
 
-        <Button Clicked="OnStartThread" Text="Start Thread" />
 
-        <Button Clicked="OnStopThread" Text="Stop Thread" />
-
-        <Button Clicked="OnStartTask" Text="Start Task" />
-
-        <Button Clicked="OnStopTask" Text="Stop Task" />
 
     </VerticalStackLayout>
 </ContentPage>
