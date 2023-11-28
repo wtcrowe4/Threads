@@ -24,10 +24,12 @@
             </Image>
         </HorizontalStackLayout>
 
-        <Label
-            HorizontalOptions="Center"
-            Text="Single Thread Page"
-            VerticalOptions="Center" />
+        <Rectangle
+            Fill="{AppThemeBinding Dark={StaticResource Gray600},
+                                   Light={StaticResource Gray200}}"
+            HeightRequest="2"
+            HorizontalOptions="EndAndExpand"
+            VerticalOptions="End" />
 
 
 
