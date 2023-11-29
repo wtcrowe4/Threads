@@ -31,6 +31,47 @@
             HorizontalOptions="EndAndExpand"
             VerticalOptions="End" />
 
+        <CollectionView ItemsSource="{Binding Threads}" SelectionMode="Single">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Image
+                            Grid.Row="0"
+                            Grid.RowSpan="2"
+                            Grid.Column="0"
+                            HeightRequest="50"
+                            Source="{Binding ImageUrl}"
+                            WidthRequest="50" />
+
+                        <Label
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Text="{Binding Title}"
+                            TextColor="{AppThemeBinding Dark={StaticResource White},
+                                                        Light={StaticResource Black}}"
+                            VerticalOptions="Center" />
+
+                        <Label
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            Text="{Binding Description}"
+                            TextColor="{AppThemeBinding Dark={StaticResource White},
+                                                        Light={StaticResource Black}}"
+                            VerticalOptions="Center" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
 
 
     </VerticalStackLayout>
