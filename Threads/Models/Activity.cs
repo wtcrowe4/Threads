@@ -28,6 +28,7 @@ namespace Threads.Models
         public string Message { get; set; }
 
         //[ObservableProperty]
+        
         public Thread Thread { get; set; }
         //[ObservableProperty]
         public User UserAct { get; set; }

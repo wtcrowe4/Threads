@@ -26,7 +26,7 @@ namespace Threads.Models
         public bool HasLikes => Likes > 0;
         public string LikesRepliesDisplay => $"{Replies} Replies ✯ {Likes} Likes";
 
-
+    
         
 
     

@@ -5,7 +5,7 @@ namespace Threads.Pages;
 
 public partial class ThreadPage : ContentPage
 {
-	public ThreadPage()
+	public ThreadPage(Thread thread)
 	{
 		InitializeComponent();
 		
@@ -17,15 +17,18 @@ public partial class ThreadPage : ContentPage
 				Message = "This is a reply",
 				Thread = new Thread
 				{
-					Content = "This is a thread",
-					Author = new User
+					User = new User
 					{
-						Username = "User1"
-
-					}
+                        UserName = "User1"
+						
+                    },
+					Message = "This is a thread 1",
+					TimeAgo = "1h",
+					Likes = 5,
+					Replies = 1
 				},
-				UserAct = new User { Username = "User2" },
-				UserRec = new User { Username = "User3" },
+				UserAct = new User { UserName = "User2" },
+				UserRec = thread.User,
 				TimeAgo = "1h"
 				},
 			new Activity
@@ -34,16 +37,20 @@ public partial class ThreadPage : ContentPage
                 Message = "This is a repost",
                 Thread = new Thread
 				{
-                    Content = "This is a thread",
-                    Author = new User
-					{
-                        Username = "User1"
 
-                    }
+                    User = new User
+                    {
+                        UserName = "User1"
+
+                    },
+                    Message = "This is a thread 2",
+                    TimeAgo = "1h",
+                    Likes = 5,
+                    Replies = 1
                 },
                 UserAct = new User { Username = "User2" },
-                UserRec = new User { Username = "User3" },
-                TimeAgo = "1h"
+                UserRec = thread.User,
+                TimeAgo = "18m"
                 },	
 			new Activity
 			{
@@ -51,20 +58,24 @@ public partial class ThreadPage : ContentPage
                 Message = "This is a follow",
                 Thread = new Thread
 				{
-                    Content = "This is a thread",
-                    Author = new User
-					{
-                        Username = "User1"
+                   User = new User
+                    {
+                        UserName = "User1"
 
-                    }
+                    },
+                    Message = "This is a thread 3",
+                    TimeAgo = "1h",
+                    Likes = 5,
+                    Replies = 1
                 },
                 UserAct = new User { Username = "User2" },
-                UserRec = new User { Username = "User3" },
-                TimeAgo = "1h"
-                },
+                UserRec = thread.User,
+                TimeAgo = "5m"
+            },
 
-	}
-}
+
+	
+        }
 
     public List<Activity> ThreadList { get; }
 }

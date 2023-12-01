@@ -464,7 +464,7 @@ namespace Threads.Pages
         {
             Debug.WriteLine("Thread Command");
             //Navigate to thread page
-            Navigation.PushAsync(new ThreadPage());
+            Navigation.PushAsync(new ThreadPage(Thread));
 
 
         }
