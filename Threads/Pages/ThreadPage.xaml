@@ -31,7 +31,7 @@
             HorizontalOptions="EndAndExpand"
             VerticalOptions="End" />
 
-        <CollectionView ItemsSource="{Binding Threads}" SelectionMode="Single">
+        <CollectionView ItemsSource="{Binding ThreadList}" SelectionMode="Single">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Grid Padding="10">
@@ -71,6 +71,8 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
+
+
 
 
 
