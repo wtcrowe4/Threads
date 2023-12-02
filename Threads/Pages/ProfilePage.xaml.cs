@@ -12,6 +12,7 @@ namespace Threads.Pages
         private List<Models.Activity> _threads;
         private List<Models.Activity> _replies; 
         private List<Models.Activity> _reposts; 
+        private Models.Thread clickedThread;
 
         public ProfilePage()
         {
@@ -463,8 +464,9 @@ namespace Threads.Pages
         private void ThreadCommand(object sender, EventArgs e)
         {
             Debug.WriteLine("Thread Command");
+            clickedThread = (Models.Thread)sender;
             //Navigate to thread page
-            Navigation.PushAsync(new ThreadPage(Thread));
+            Navigation.PushAsync(new ThreadPage(clickedThread));
 
 
         }
