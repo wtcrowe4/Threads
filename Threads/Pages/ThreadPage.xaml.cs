@@ -5,11 +5,16 @@ namespace Threads.Pages;
 
 public partial class ThreadPage : ContentPage
 {
-	public ThreadPage(Thread thread)
+    public List<Activity> ThreadList { get; }
+    public List<Activity> UserList { get; }
+    public List<Activity> ActivityList { get; }
+    public List<Activity> FollowingList { get; }
+    public ThreadPage(Thread thread)
 	{
 		InitializeComponent();
+         
 
-        ThreadList = new List<Activity>
+    ThreadList = new List<Activity>
         {
             new Activity
             {
@@ -82,5 +87,6 @@ public partial class ThreadPage : ContentPage
 
 
 
-    public List<Activity> ThreadList { get; }
+  
+
 }
