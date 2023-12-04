@@ -22,6 +22,8 @@ namespace Threads.Models
         [ObservableProperty]
         string timeAgo;
 
+        List<Activity> allActivity;
+
         public bool HasReplies => Replies > 0;
         public bool HasLikes => Likes > 0;
         public string LikesRepliesDisplay => $"{Replies} Replies ✯ {Likes} Likes";
