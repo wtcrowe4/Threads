@@ -22,7 +22,9 @@ namespace Threads.Models
         [ObservableProperty]
         string timeAgo;
 
-        List<Activity> allActivity;
+        List<Activity> allActivity = Activity.Where(activity => activity.Thread == this).ToList();
+
+
 
         public bool HasReplies => Replies > 0;
         public bool HasLikes => Likes > 0;

@@ -14,7 +14,8 @@ public partial class ThreadPage : ContentPage
 		InitializeComponent();
          
 
-    ThreadList = new List<Activity>
+
+        ThreadList = new List<Activity>
         {
             new Activity
             {
@@ -77,7 +78,26 @@ public partial class ThreadPage : ContentPage
                 UserRec = thread.User,
                 TimeAgo = "5m"
             },
+            new Activity
+            {
+                Action = Activity.ActionType.Follow,
+                Message = "This is a follow",
+                Thread = new Thread
+                {
+                    User = new User
+                    {
+                        UserName = "User1"
 
+                    },
+                    Message = "This is a thread 3",
+                    TimeAgo = "1h",
+                    Likes = 5,
+                    Replies = 1
+                },
+                UserAct = new User { UserName = "User4" },
+                UserRec = thread.User,
+                TimeAgo = "1m"
+            },
 
 
         }
