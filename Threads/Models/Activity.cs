@@ -36,5 +36,11 @@ namespace Threads.Models
         public User UserRec { get; set; }
         //[ObservableProperty]
         public string TimeAgo { get; set; }
+
+        public List<Activity> AllActivity;
+        public void AddToActivityList(Activity activity)
+        {
+            AllActivity.Add(activity);
+        }
     }
 }
