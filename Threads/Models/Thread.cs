@@ -28,15 +28,7 @@ namespace Threads.Models
 
         public List<Activity> GetMatchingActivities()
         {
-            List<Activity> matchingActivities = new List<Activity>();
-            foreach (Activity activity in AllActivity)
-            {
-                if (activity.thread == this)
-                {
-                    matchingActivities.Add(activity);
-                }
-            }
-            return matchingActivities;
+            return Activity.AllActivity.Where(activity => activity.Thread == this).ToList();
         }
 
        

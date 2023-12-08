@@ -37,7 +37,7 @@ namespace Threads.Models
         //[ObservableProperty]
         public string TimeAgo { get; set; }
 
-        public List<Activity> AllActivity;
+        public static List<Activity> AllActivity;
         public void AddToActivityList(Activity activity)
         {
             AllActivity.Add(activity);
