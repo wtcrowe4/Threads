@@ -31,6 +31,28 @@
             HorizontalOptions="EndAndExpand"
             VerticalOptions="End" />
 
+        <HorizontalStackLayout>
+            <Label
+                HorizontalOptions="CenterAndExpand"
+                Text="Thread Page"
+                VerticalOptions="CenterAndExpand" />
+
+            <Image Source="AlertBell.png">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding AlertCommand}" NumberOfTapsRequired="1" />
+                </Image.GestureRecognizers>
+
+            </Image>
+
+            <Image Source="PlusSign.png">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding AddCommand}" NumberOfTapsRequired="1" />
+                </Image.GestureRecognizers>
+            </Image>
+        </HorizontalStackLayout>
+
+
+
         <CollectionView ItemsSource="{Binding ThreadList}" SelectionMode="Single">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
