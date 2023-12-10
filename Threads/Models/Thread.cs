@@ -9,6 +9,9 @@ namespace Threads.Models
         User user;
 
         [ObservableProperty]
+        string imageUrl;
+
+        [ObservableProperty]
         string message;
 
         [ObservableProperty]
