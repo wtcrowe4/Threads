@@ -38,6 +38,13 @@ namespace Threads.Models
         public string TimeAgo { get; set; }
 
         public static List<Activity> AllActivity;
+        //on creatation of activity, add to list
+        public Activity()
+        {
+            AllActivity = new List<Activity>();
+            
+        }
+
         public void AddToActivityList(Activity activity)
         {
             AllActivity.Add(activity);
