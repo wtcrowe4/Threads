@@ -23,6 +23,9 @@ namespace Threads.Models
         int replies;
 
         [ObservableProperty]
+        int views;
+
+        [ObservableProperty]
         string timeAgo;
 
 

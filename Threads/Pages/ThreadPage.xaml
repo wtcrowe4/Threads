@@ -22,6 +22,11 @@
                 </Image.GestureRecognizers>
 
             </Image>
+            <Image Source="PlusSign.png">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding AddCommand}" NumberOfTapsRequired="1" />
+                </Image.GestureRecognizers>
+            </Image>
         </HorizontalStackLayout>
 
         <Rectangle
@@ -37,23 +42,19 @@
                 Text="Thread Page"
                 VerticalOptions="CenterAndExpand" />
 
-            <Image Source="AlertBell.png">
+            <Image Source="ThreadImage">
                 <Image.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding AlertCommand}" NumberOfTapsRequired="1" />
+                    <TapGestureRecognizer Command="{Binding ProfileCommand}" NumberOfTapsRequired="1" />
                 </Image.GestureRecognizers>
 
             </Image>
 
-            <Image Source="PlusSign.png">
-                <Image.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding AddCommand}" NumberOfTapsRequired="1" />
-                </Image.GestureRecognizers>
-            </Image>
+
         </HorizontalStackLayout>
 
 
 
-        <CollectionView ItemsSource="{Binding ThreadList}" SelectionMode="Single">
+        <CollectionView ItemsSource="{Binding CurrentThread}" SelectionMode="Single">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Grid Padding="10">
@@ -66,35 +67,66 @@
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
 
-                        <Image
-                            Grid.Row="0"
-                            Grid.RowSpan="2"
-                            Grid.Column="0"
-                            HeightRequest="50"
-                            Source="{Binding ImageUrl}"
-                            WidthRequest="50" />
 
                         <Label
                             Grid.Row="0"
                             Grid.Column="1"
-                            Text="{Binding Title}"
+                            Text="{Binding Message}"
                             TextColor="{AppThemeBinding Dark={StaticResource White},
                                                         Light={StaticResource Black}}"
                             VerticalOptions="Center" />
 
-                        <Label
-                            Grid.Row="1"
-                            Grid.Column="1"
-                            Text="{Binding Description}"
-                            TextColor="{AppThemeBinding Dark={StaticResource White},
-                                                        Light={StaticResource Black}}"
-                            VerticalOptions="Center" />
+                        <HorizontalStackLayout Grid.Row="1" Grid.Column="0">
+                            <Image Source="Like.png">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding LikeCommand}" NumberOfTapsRequired="1" />
+                                </Image.GestureRecognizers>
+                            </Image>
+                            <Label
+                                Text="{Binding Likes}"
+                                TextColor="{AppThemeBinding Dark={StaticResource White},
+                                                            Light={StaticResource Black}}"
+                                VerticalOptions="Center" />
+                            <Label
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                Text="{Binding Likes}"
+                                TextColor="{AppThemeBinding Dark={StaticResource White},
+                                                            Light={StaticResource Black}}"
+                                VerticalOptions="Center" />
+
+                            <Label
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                Text="{Binding Replies}"
+                                TextColor="{AppThemeBinding Dark={StaticResource White},
+                                                            Light={StaticResource Black}}"
+                                VerticalOptions="Center" />
+
+                            <Label
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                Text="{Binding Views}"
+                                TextColor="{AppThemeBinding Dark={StaticResource White},
+                                                            Light={StaticResource Black}}"
+                                VerticalOptions="Center" />
+
+                            <Label
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                Text="{Binding TimeAgo}"
+                                TextColor="{AppThemeBinding Dark={StaticResource White},
+                                                            Light={StaticResource Black}}"
+                                VerticalOptions="Center" />
+                        </HorizontalStackLayout>
+
+
                     </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
 
-        
+
 
 
 
