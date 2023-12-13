@@ -14,6 +14,7 @@ namespace Threads.Models
         public string Icon { get; set; }
         public enum ActionType
         {
+            View,
             Reply,
             Repost,
             Follow,
