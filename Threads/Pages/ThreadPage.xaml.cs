@@ -6,13 +6,14 @@ namespace Threads.Pages;
 public partial class ThreadPage : ContentPage
 {
     public List<Activity> ThreadList { get; }
+    public Thread CurrentThread { get; }
     public List<Activity> UserList { get; }
     public List<Activity> ActivityList { get; }
     public List<Activity> FollowingList { get; }
     public ThreadPage(Thread thread)
 	{
 		InitializeComponent();
-         
+        
 
 
         ThreadList = new List<Activity>
@@ -100,8 +101,8 @@ public partial class ThreadPage : ContentPage
             },
 
 
-        }
-        ;
+        };
+        CurrentThread = thread;
         BindingContext = this;
         }
 

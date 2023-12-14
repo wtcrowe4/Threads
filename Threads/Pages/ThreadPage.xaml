@@ -82,11 +82,7 @@
                                     <TapGestureRecognizer Command="{Binding LikeCommand}" NumberOfTapsRequired="1" />
                                 </Image.GestureRecognizers>
                             </Image>
-                            <Label
-                                Text="{Binding Likes}"
-                                TextColor="{AppThemeBinding Dark={StaticResource White},
-                                                            Light={StaticResource Black}}"
-                                VerticalOptions="Center" />
+
                             <Label
                                 Grid.Row="1"
                                 Grid.Column="1"
