@@ -27,6 +27,16 @@ namespace Threads.Models
         [ObservableProperty]
         bool hasSimiliarFollowers;
 
+        [ObservableProperty]
+        List<Activity> activity;
+
+        public List<Activity> GetMatchingActivities()
+        {
+            return Activity.AllActivity.Where(activity => activity.User == this).ToList();
+        }
+
+        List <Activity> recentActivity = > GetMatchingActivities().Take(3).ToList();
+        public string UserName { get => userName; set => SetProperty(ref userName, value); }
         public string FollowersDisplay => $"{Followers.ToMetric().ToUpper()} Followers"; 
         public string IsFollowingDisplay => IsFollowing ? "Following" : "Follow";
         public string IsVerifiedDisplay => IsVerified ? FontAwesomeIcons.CircleCheck : string.Empty;
