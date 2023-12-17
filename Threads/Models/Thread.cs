@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using Java.Security;
 
 namespace Threads.Models
 {
@@ -26,7 +27,14 @@ namespace Threads.Models
         int views;
 
         [ObservableProperty]
-        string timeAgo;
+        DateTime timestamp;
+
+        
+        public string GetTimeAgo()
+        {
+            DateTime timeAgo = Timestamp - DateTime.UtcNow.ToLocalTime();
+            return timeAgo.ToString();
+        }
 
 
         //Linking activity by Thread
@@ -37,7 +45,7 @@ namespace Threads.Models
             return Activity.AllActivity.Where(activity => activity.Thread == this).ToList();
         }
 
-       
+
         public bool HasReplies => Replies > 0;
         public bool HasLikes => Likes > 0;
         public string LikesRepliesDisplay => $"{Replies} Replies ✯ {Likes} Likes";

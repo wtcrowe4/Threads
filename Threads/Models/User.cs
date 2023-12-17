@@ -30,12 +30,15 @@ namespace Threads.Models
         [ObservableProperty]
         List<Activity> activity;
 
-        public List<Activity> GetMatchingActivities()
+        [ObservableProperty]
+        DateTime joined;
+
+        public List<Activity> GetRecentActivities()
         {
-            return Activity.AllActivity.Where(activity => activity.User == this).ToList();
+            return Activity.AllActivity.Where(activity => activity.User == this).OrderByDescending(activity => activity.Timestamp).Take(3).ToList();
         }
 
-        List <Activity> recentActivity = > GetMatchingActivities().Take(3).ToList();
+        List <Activity> recentActivity = GetRecentActivities().Take(3).ToList();
         public string UserName { get => userName; set => SetProperty(ref userName, value); }
         public string FollowersDisplay => $"{Followers.ToMetric().ToUpper()} Followers"; 
         public string IsFollowingDisplay => IsFollowing ? "Following" : "Follow";

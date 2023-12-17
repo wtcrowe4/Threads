@@ -36,9 +36,13 @@ namespace Threads.Models
         //[ObservableProperty]
         public User UserRec { get; set; }
         //[ObservableProperty]
+        
+        public DateTime Timestamp { get; set; }
         public string TimeAgo { get; set; }
 
-        public static List<Activity> AllActivity;
+
+
+        public List<Activity> AllActivity { get; set; }
         //on creatation of activity, add to list
         public Activity()
         {
